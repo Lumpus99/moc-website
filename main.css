@@ -1,8 +1,8 @@
 html, body {
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 400;
-    background: linear-gradient(135deg, #f8fafc, #eef2f3);
-    color: #333;
+    background: #f5f5f5; /* Light gray background */
+    color: #4a4a4a; /* Muted gray text color */
     margin: 0;
     padding: 0;
 }
@@ -18,22 +18,22 @@ html, body {
 /* Links */
 a {
     text-decoration: none;
-    color: #ff6b6b;
+    color: #1f3b57; /* Deep blue for links */
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #ff4f4f;
+    color: #d4a017; /* Accent gold on hover */
 }
 
 /* Header */
 #header {
     text-align: center;
     max-width: 600px;
-    margin: 20px auto; /* Reduced margin for compactness */
-    padding: 20px; /* Less padding */
+    margin: 20px auto;
+    padding: 20px;
     line-height: 1.4em;
-    background: linear-gradient(135deg, #1565c0, #4fc3f7);
+    background: #1f3b57; /* Deep blue background for the header */
     color: white;
     border-radius: 6px;
 }
@@ -79,27 +79,17 @@ a:hover {
 
 /* 3D coin toss effect with scaling and rotation */
 @keyframes coinToss {
-    0% {
-        transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1);
-    }
-    25% {
-        transform: rotateY(90deg) rotateX(5deg) rotateZ(5deg) scale(1.05);
-    }
-    50% {
-        transform: rotateY(180deg) rotateX(10deg) rotateZ(10deg) scale(1.1);
-    }
-    75% {
-        transform: rotateY(270deg) rotateX(5deg) rotateZ(5deg) scale(1.05);
-    }
-    100% {
-        transform: rotateY(360deg) rotateX(0deg) rotateZ(0deg) scale(1);
-    }
+    0% { transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1); }
+    25% { transform: rotateY(90deg) rotateX(5deg) rotateZ(5deg) scale(1.05); }
+    50% { transform: rotateY(180deg) rotateX(10deg) rotateZ(10deg) scale(1.1); }
+    75% { transform: rotateY(270deg) rotateX(5deg) rotateZ(5deg) scale(1.05); }
+    100% { transform: rotateY(360deg) rotateX(0deg) rotateZ(0deg) scale(1); }
 }
 
 /* Icons */
 .icons {
     list-style-type: none;
-    font-size: x-large; /* Reduced font size */
+    font-size: x-large;
     padding: 0;
     display: flex;
     justify-content: space-between;
@@ -117,27 +107,27 @@ a:hover {
 }
 
 .icons a:hover {
-    color: #ff6b6b;
+    color: #d4a017; /* Accent color for icon hover */
     transform: scale(1.1);
 }
 
 /* Content sections */
 section {
     max-width: 950px;
-    margin: 30px auto; /* Reduced margin for compactness */
-    background-color: #ffffff;
-    padding: 15px; /* Reduced padding */
+    margin: 30px auto;
+    background-color: #ffffff; /* White section background */
+    padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    line-height: 1.6em; /* More compact line spacing */
+    line-height: 1.6em;
 }
 
 h2 {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.5em; /* Reduced font size */
+    font-size: 1.5em;
     font-weight: 600;
-    color: #1565c0;
-    border-bottom: 2px solid #ff6b6b;
+    color: #1f3b57; /* Deep blue for section headers */
+    border-bottom: 2px solid #d4a017; /* Accent gold underline */
     padding-bottom: 8px;
     margin-bottom: 15px;
 }
@@ -147,7 +137,7 @@ h2 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 15px; /* Reduced margin between entries */
+    margin-bottom: 15px;
     align-items: flex-start;
 }
 
@@ -155,15 +145,15 @@ h2 {
     flex-basis: 20%;
     min-width: 110px;
     font-weight: bold;
-    color: #ff6b6b;
+    color: #1f3b57; /* Deep blue for dates */
     text-align: left;
 }
 
 .entry .details, .entry-publication .publication-details, .entry-award .award-details {
     flex-basis: 75%;
-    color: #333;
+    color: #4a4a4a; /* Muted gray for details */
     font-size: 1em;
-    margin-left: 10px; /* Adjusted margin */
+    margin-left: 10px;
 }
 
 /* Prevent line breaks for dates */
@@ -173,7 +163,7 @@ h2 {
 
 /* Hover effect for entries */
 .entry:hover, .entry-publication:hover, .entry-award:hover {
-    background-color: rgba(255, 107, 107, 0.08);
+    background-color: rgba(212, 160, 23, 0.08); /* Light gold hover effect */
     border-radius: 4px;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
     transition: background-color 0.2s ease, box-shadow 0.2s ease;
