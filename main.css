@@ -33,7 +33,7 @@ a:hover {
     padding: 20px 100px; /* Default padding for larger screens */
     background: linear-gradient(135deg, #2569bc, #000000); /* Initial gradient */
     background-size: 200% 200%; /* Enlarge the background for smooth movement */
-    animation: gradientShift 10s ease infinite; /* Apply animation */
+    animation: gradientShift 10s infinite; /* Apply animation */
     color: white;
     text-align: center;
     border-radius: 0; /* Remove border-radius for full-width effect */
