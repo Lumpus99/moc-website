@@ -26,17 +26,64 @@ a:hover {
     color: #d4a017; /* Accent gold on hover */
 }
 
-/* Header */
+/* Header (Banner) with animated gradient */
 #header {
-    text-align: center;
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    line-height: 1.4em;
-    background: #1f3b57; /* Deep blue background for the header */
+    width: 100%; /* Full-width banner */
+    margin: 0 auto;
+    padding: 20px 100px; /* Reduced padding for shorter height */
+    background: linear-gradient(135deg, #2569bc, #000000); /* Initial gradient */
+    background-size: 200% 200%; /* Enlarge the background for smooth movement */
+    animation: gradientShift 10s ease infinite; /* Apply animation */
     color: white;
-    border-radius: 6px;
+    text-align: center;
+    border-radius: 0; /* Remove border-radius for full-width effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a slight shadow for depth */
+    position: relative;
 }
+
+/* Keyframes for smooth gradient animation */
+@keyframes gradientShift {
+    0% {
+        background-position: 0 50%; /* Start position */
+    }
+    50% {
+        background-position: 100% 50%; /* Midway position */
+    }
+    100% {
+        background-position: 0 50%; /* End position, loops back */
+    }
+}
+
+
+/* Banner content container */
+#header .container {
+    max-width: 1200px; /* Limit the content width inside the banner */
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* H1 Title in the Banner */
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3em; /* Larger font size for the banner */
+    font-weight: 700;
+    color: white;
+    margin-bottom: 10px; /* Spacing below the main title */
+}
+
+/* Subtitle (if any) below the title */
+#header p {
+    font-size: 1.2em;
+    color: #e0e0e0; /* Slightly lighter text color for the subtitle */
+    margin-bottom: 20px;
+}
+
+/* Icons within the banner */
+#header .icons {
+    margin-top: 20px;
+    display: inline-block;
+}
+
 
 /* Avatar */
 .avatar-container {
@@ -92,13 +139,13 @@ a:hover {
     font-size: x-large;
     padding: 0;
     display: flex;
-    justify-content: space-between;
-    max-width: 300px;
+    justify-content: center; /* Center the icons */
     margin: 15px auto;
 }
 
 .icons li {
-    display: inline;
+    display: inline-block;
+    margin: 0 15px; /* Adds 15px space on both left and right of each icon */
 }
 
 .icons a {
