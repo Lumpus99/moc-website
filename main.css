@@ -30,7 +30,7 @@ a:hover {
 #header {
     width: 100%; /* Full-width banner */
     margin: 0 auto;
-    padding: 20px 100px; /* Reduced padding for shorter height */
+    padding: 20px 100px; /* Default padding for larger screens */
     background: linear-gradient(135deg, #2569bc, #000000); /* Initial gradient */
     background-size: 200% 200%; /* Enlarge the background for smooth movement */
     animation: gradientShift 10s ease infinite; /* Apply animation */
@@ -39,6 +39,29 @@ a:hover {
     border-radius: 0; /* Remove border-radius for full-width effect */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a slight shadow for depth */
     position: relative;
+}
+
+/* Adjusted spacing for the header text */
+#header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3em; /* Larger font size */
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px; /* Increased margin below title */
+    line-height: 1.2em; /* Increase line height for better readability */
+}
+
+#header p {
+    font-size: 1.4em; /* Slightly larger subtitle */
+    color: #e0e0e0;
+    margin-bottom: 30px; /* Increased space between subtitle and icons */
+    line-height: 1.6em; /* Adjust line height for better readability */
+}
+
+/* Icons within the banner */
+#header .icons {
+    margin-top: 20px;
+    display: inline-block;
 }
 
 /* Keyframes for smooth gradient animation */
@@ -53,6 +76,24 @@ a:hover {
         background-position: 0 50%; /* End position, loops back */
     }
 }
+
+/* Responsive padding for mobile devices */
+@media (max-width: 768px) {
+    #header {
+        padding: 30px 15px; /* Smaller padding for mobile screens */
+    }
+
+    #header h1 {
+        font-size: 2em; /* Smaller font size on mobile */
+        margin-bottom: 15px; /* Adjusted margin for mobile */
+    }
+
+    #header p {
+        font-size: 1.1em; /* Smaller subtitle on mobile */
+        margin-bottom: 20px; /* Adjusted space between subtitle and icons */
+    }
+}
+
 
 
 /* Banner content container */
