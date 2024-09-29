@@ -30,13 +30,13 @@ a:hover {
 #header {
     width: 100%; /* Full-width banner */
     margin: 0 auto;
-    padding: 20px 100px; /* Default padding for larger screens */
+    padding: 15px 100px; /* Default padding for larger screens */
     background: linear-gradient(135deg, #2569bc, #000000); /* Initial gradient */
     background-size: 200% 200%; /* Enlarge the background for smooth movement */
     animation: gradientShift 10s infinite; /* Apply animation */
     color: white;
     text-align: center;
-    border-radius: 0; /* Remove border-radius for full-width effect */
+    border-radius: 10px; /* Remove border-radius for full-width effect */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a slight shadow for depth */
     position: relative;
 }
@@ -44,7 +44,7 @@ a:hover {
 /* Adjusted spacing for the header text */
 #header h1 {
     font-family: 'Poppins', sans-serif;
-    font-size: 3em; /* Larger font size */
+    font-size: 1.5em; /* Larger font size */
     font-weight: 700;
     color: white;
     margin-bottom: 20px; /* Increased margin below title */
@@ -52,10 +52,10 @@ a:hover {
 }
 
 #header p {
-    font-size: 1.4em; /* Slightly larger subtitle */
+    font-size: 0.5em; /* Slightly larger subtitle */
     color: #e0e0e0;
     margin-bottom: 30px; /* Increased space between subtitle and icons */
-    line-height: 1.6em; /* Adjust line height for better readability */
+    line-height: 1.2em; /* Adjust line height for better readability */
 }
 
 /* Icons within the banner */
@@ -80,27 +80,58 @@ a:hover {
 /* Responsive padding for mobile devices */
 @media (max-width: 768px) {
     #header {
-        padding: 30px 15px; /* Smaller padding for mobile screens */
+        padding: 0 0; /* Smaller padding for mobile screens */
     }
 
     #header h1 {
-        font-size: 2em; /* Smaller font size on mobile */
+        font-size: 1em; /* Smaller font size on mobile */
         margin-bottom: 15px; /* Adjusted margin for mobile */
     }
 
     #header p {
-        font-size: 1.1em; /* Smaller subtitle on mobile */
+        font-size: 1em; /* Smaller subtitle on mobile */
         margin-bottom: 20px; /* Adjusted space between subtitle and icons */
     }
 }
 
 
 
-/* Banner content container */
-#header .container {
-    max-width: 1200px; /* Limit the content width inside the banner */
-    margin: 0 auto;
-    text-align: center;
+/* Research Interests Section */
+.research-interests {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: background-color 1s ease, box-shadow 1s ease; /* Smooth transition */
+}
+
+.research-interests h3 {
+    font-size: 2em;
+    color: #d4a017; /* Accent color for heading */
+    margin-bottom: 15px;
+}
+
+.research-interests p {
+    font-size: 1.2em;
+    line-height: 1.6em;
+    color: #ffffff; /* White text for contrast */
+    text-align: justify; /* Justify the text */
+}
+
+/* Hover effect for the Research Interests section */
+.research-interests:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Lighten the background on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Increase shadow intensity */
+    transition: background-color 1s ease, box-shadow 1s ease; /* Smooth transition on hover */
+}
+
+
+/* Icons */
+.icons {
+    margin-top: 20px;
+    display: inline-block;
 }
 
 /* H1 Title in the Banner */
