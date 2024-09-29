@@ -94,37 +94,12 @@ a:hover {
     }
 }
 
-
-
-/* Research Interests Section */
-.research-interests {
-    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
-    padding: 20px;
-    border-radius: 10px; /* Rounded corners */
-    margin-top: 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    transition: background-color 1s ease, box-shadow 1s ease; /* Smooth transition */
-}
-
-.research-interests h3 {
-    font-size: 2em;
-    color: #d4a017; /* Accent color for heading */
-    margin-bottom: 15px;
-}
-
-.research-interests p {
-    font-size: 1.2em;
-    line-height: 1.6em;
-    color: #ffffff; /* White text for contrast */
-    text-align: justify; /* Justify the text */
-}
-
-/* Hover effect for the Research Interests section */
-.research-interests:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Lighten the background on hover */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Increase shadow intensity */
-    transition: background-color 1s ease, box-shadow 1s ease; /* Smooth transition on hover */
+/* Research Interests Text */
+#research-interests p {
+    font-size: 1.1em;
+    color: #4a4a4a; /* Muted gray text */
+    text-align: justify; /* Justify the text for alignment */
+    line-height: 1.8em;
 }
 
 
@@ -230,20 +205,21 @@ h1 {
     transform: scale(1.1);
 }
 
-/* Content sections */
+/* General section styling */
 section {
     max-width: 950px;
     margin: 30px auto;
     background-color: #ffffff; /* White section background */
-    padding: 15px;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     line-height: 1.6em;
 }
 
+/* Section Headers */
 h2 {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.5em;
+    font-size: 1.8em;
     font-weight: 600;
     color: #1f3b57; /* Deep blue for section headers */
     border-bottom: 2px solid #d4a017; /* Accent gold underline */
