@@ -180,6 +180,33 @@ h1 {
     }
 }
 
+
+/* Styling for the animated name */
+.animated-name {
+    font-weight: 700; /* Make it bold */
+    background: linear-gradient(120deg, #ff6b6b, #ffd54f, #4fc3f7, #ff6b6b); /* Repeating gradient colors */
+    background-size: 300%; /* Ensure the background is large enough to animate */
+    background-clip: text;
+    -webkit-background-clip: text; /* Ensures background is clipped to text on Webkit browsers */
+    color: transparent; /* Text itself is transparent */
+    display: inline-block;
+    animation: gradientAnimation 10s infinite; /* Infinite animation */
+}
+
+/* Keyframe animation for gradient effect */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0 0; /* Start position */
+    }
+    50% {
+        background-position: 100% 100%; /* Middle of the gradient animation */
+    }
+    100% {
+        background-position: 0 0; /* End position (looping back to start) */
+    }
+}
+
+
 /* Icons */
 .icons {
     list-style-type: none;
