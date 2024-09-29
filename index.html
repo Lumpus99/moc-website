@@ -54,9 +54,10 @@
         <ul class="nav-links">
             <li><a href="#research-interests">Research Interests</a></li>
             <li><a href="#education">Education</a></li>
-            <li><a href="#research-experience">Research Experience</a></li>
+            <li><a href="#work-and-research-experience">Experience</a></li>
             <li><a href="#awards">Awards</a></li>
             <li><a href="#publications">Publications</a></li>
+            <li><a href="#cv">CV</a></li>
         </ul>
     </nav>
 
@@ -133,9 +134,27 @@
 </section>
 
 
-<!-- Research Experience Section -->
-<section id="research-experience">
-    <h2>Research Experience</h2>
+<!-- Work and Research Experience Section -->
+<section id="work-and-research-experience">
+    <h2>Research and Work Experience</h2>
+
+    <!-- Research Experience Subsection -->
+    <h3>Research Experience</h3>
+    <div class="entry">
+        <div class="date">May 2024 – Jul. 2024</div>
+        <div class="details">
+            <strong>Temporary Research Associate</strong> – Texas A&M University at Qatar
+            <ul>
+                <li>Developed a self-supervised learning framework for video data, enabling models to learn meaningful
+                    representations without labeled data.
+                </li>
+                <li>Implemented federated video learning in the compressed domain, optimizing performance while
+                    preserving privacy.
+                </li>
+            </ul>
+        </div>
+    </div>
+
     <div class="entry">
         <div class="date">Aug. 2023 – Ongoing</div>
         <div class="details">
@@ -151,18 +170,44 @@
             </ul>
         </div>
     </div>
+
+
+    <!-- Work Experience Subsection -->
+    <h3>Work Experience</h3>
     <div class="entry">
-        <div class="date">May 2024 – Jul. 2024</div>
+        <div class="date">Jul. 2021 – Apr. 2023</div>
         <div class="details">
-            <strong>Temporary Research Associate</strong> – Texas A&M University at Qatar
+            <strong>Full-Stack Software Developer</strong> – Innova It Solutions
+            <a href="https://www.innova.com.tr/en/centralized-fault-management-system-mars" target="_blank"
+               rel="noopener noreferrer"
+               class="external-link">
+                (Visit Project Website)
+            </a>
             <ul>
-                <li>Developed a self-supervised learning framework for video data, enabling models to learn meaningful
-                    representations without labeled data.
+                <li>Contributed to the development of the "Centralized Fault Management System (MARS)," designed to
+                    provide end-to-end fault detection, diagnosis, and resolution for telecommunication networks and IT
+                    infrastructures.
                 </li>
-                <li>Implemented federated video learning in the compressed domain, optimizing performance while
-                    preserving privacy.
+                <li>Responsible for improving the legacy codebase and developing new functionalities based on functional
+                    specifications and business requirements.
                 </li>
+                <li>Gained experience working in an agile development environment.</li>
+                <li>Developed microservices using Spring Boot, interacting with PL/SQL and MongoDB databases in a
+                    microservice architecture.
+                </li>
+                <li>Worked on front-to-backend interactions using React.js and Vaadin frameworks, utilizing RESTful
+                    services for seamless integration.
+                </li>
+
             </ul>
+        </div>
+    </div>
+    <div class="entry">
+        <div class="date">Spring 2023 – Ongoing</div>
+        <div class="details">
+            <strong>Associate Instructor (TA)</strong> – CSCI-C 200 Introduction to Computers and Programming
+            <li>Instructor: Prof. Dr. Mehmet M Dalkilic
+            </li>
         </div>
     </div>
 </section>
@@ -224,6 +269,16 @@
 
 </section>
 
+<!-- CV Section -->
+<section id="cv">
+    <h2>Curriculum Vitae</h2>
+    <div class="cv-container">
+        <!-- Embedded PDF -->
+        <embed src="MertResume.pdf" type="application/pdf" width="100%" height="600px"/>
+        <!-- Provide a download link as a fallback -->
+        <p>If the PDF does not display, you can <a href="MertResume.pdf" download>download the CV here</a>.</p>
+    </div>
+</section>
 
 <button id="scrollTopBtn" title="Go to top">↑</button>
 
@@ -234,7 +289,7 @@
     };
 
     function scrollFunction() {
-        var scrollTopBtn = document.getElementById("scrollTopBtn");
+        const scrollTopBtn = document.getElementById("scrollTopBtn");
         if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
             scrollTopBtn.classList.add("show");
         } else {
@@ -278,7 +333,6 @@
         }
     });
 </script>
-
 
 <script>
     // Function to randomly trigger spin animation with a low probability
