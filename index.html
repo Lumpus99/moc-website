@@ -37,12 +37,36 @@
             integrity="sha512-KlJCpRsLf+KKu2VQa5vmRuClRFjxc5lXO03ixZt82HZUk41+1I0bD8KBSA0fY290ayMfWYI9udIqeOWSu1/uZg=="
             crossorigin="anonymous"
     />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
 </head>
 
 <body>
 
 <!-- Banner Header Section -->
 <section id="header">
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#research-interests">Research Interests</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#research-experience">Research Experience</a></li>
+            <li><a href="#awards">Awards</a></li>
+            <li><a href="#publications">Publications</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hamburger Menu for Mobile -->
+    <div class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
     <div class="container">
         <!-- Avatar image inside the white background container -->
         <div class="avatar-container">
@@ -176,7 +200,7 @@
         <div class="publication-details">
             <strong>Mert Onur Cakiroglu</strong>, Hasan Kurban, Parichit Sharma, M. Oguzhan Kulekci, Elham Khorasani
             Buxton, Maryam Raeeszadeh-Sarmazdeh, Mehmet Dalkilic. "An Extended De Bruijn Graph for Feature Engineering
-            Over Biological Sequential Data." <em>Machine Learning Journal</em>.
+            Over Biological Sequential Data." <em>Machine Learning: Science and Technology</em>.
         </div>
     </div>
 
@@ -199,6 +223,61 @@
     </div>
 
 </section>
+
+
+<button id="scrollTopBtn" title="Go to top">↑</button>
+
+<script>
+    // Show the button when scrolling down
+    window.onscroll = function () {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        var scrollTopBtn = document.getElementById("scrollTopBtn");
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            scrollTopBtn.classList.add("show");
+        } else {
+            scrollTopBtn.classList.remove("show");
+        }
+    }
+
+    // Scroll to the top when the button is clicked
+    document.getElementById("scrollTopBtn").addEventListener("click", function () {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+</script>
+
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const navItems = document.querySelectorAll('.nav-links a');
+
+    // Toggle the hamburger menu on click
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    });
+
+    // Close the hamburger menu when a nav link is clicked
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('active');
+        });
+    });
+
+    // Close the menu if clicked outside
+    document.addEventListener('click', (event) => {
+        const isClickInside = hamburger.contains(event.target) || navLinks.contains(event.target);
+
+        if (!isClickInside) {
+            // If the click is outside the menu and hamburger, close the menu
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('active');
+        }
+    });
+</script>
 
 
 <script>
@@ -226,7 +305,6 @@
     const avatarContainer = document.querySelector('.avatar-container');
     avatarContainer.addEventListener('click', triggerSpin);
 </script>
-
 
 </body>
 
