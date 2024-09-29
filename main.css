@@ -276,3 +276,18 @@ h2 {
         flex-basis: 100%;
     }
 }
+
+
+/* Styling for external links */
+.external-link {
+    font-size: 0.9em; /* Slightly smaller font for the link */
+    margin-left: 10px; /* Adds some space between the text and the link */
+    color: #d4a017; /* Accent color for links */
+    text-decoration: underline; /* Always show underline */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.external-link:hover {
+    color: #ff6b6b; /* Change color on hover */
+    text-decoration: underline; /* Keep underline on hover */
+}
