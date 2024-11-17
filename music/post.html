@@ -2,25 +2,40 @@
 <html lang="en">
 
 <head>
+    <!-- Meta tags and title -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post Viewer</title>
-    <link rel="stylesheet" href="website.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="post.css">
     <link rel="stylesheet" href="header.css">
-    <!-- Include Showdown.js in the head -->
+
+    <!-- Include Showdown.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
 </head>
 
 <body>
 
-    <!-- Header should be inside the body -->
-    <header>
+    <!-- Minimized Header with Equalizer on the Left -->
+    <header class="minimized-header">
         <div class="equalizer" id="equalizer"></div>
-        <h1>Music Reviews</h1>
-        <p>Personal takes on albums, tracks, and artists.</p>
+        <h1><a href="index.html">Music Reviews</a></h1>
     </header>
 
-    <main id="post-content" class="markdown-body">Loading...</main>
+    <!-- Main Content -->
+    <main>
+        <!-- Decorative Background -->
+        <div class="post-background"></div>
+
+        <!-- Post Content Box -->
+        <div class="post-box">
+            <div id="post-content" class="markdown-body"></div>
+        </div>
+    </main>
 
     <!-- JavaScript code for Markdown conversion -->
     <script>
@@ -37,7 +52,6 @@
                 .then((markdownContent) => {
                     // Convert Markdown to HTML using Showdown
                     const converter = new showdown.Converter();
-                    // Render content
                     document.getElementById("post-content").innerHTML = converter.makeHtml(markdownContent);
 
                     // Set the page title from the first heading in the Markdown
@@ -58,7 +72,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const equalizer = document.getElementById('equalizer');
-            const numberOfBars = 30; // Adjust the number of bars as needed
+            const numberOfBars = 20; // Adjust the number of bars as needed
 
             for (let i = 0; i < numberOfBars; i++) {
                 const bar = document.createElement('div');

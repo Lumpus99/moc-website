@@ -1,0 +1,340 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Minimized Header */
+.minimized-header {
+    background-color: #1DB954;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.minimized-header h1 {
+    font-size: 24px;
+    z-index: 99999999;
+}
+
+.minimized-header h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+.minimized-header h1 a:hover {
+    text-decoration: underline;
+}
+
+/* Equalizer Styles */
+.equalizer {
+    display: flex;
+    flex-direction: row; /* Arrange bars horizontally */
+    align-items: flex-end; /* Align bars to the bottom */
+    height: 100%; /* Equalizer height matches header */
+    margin-right: 20px;
+}
+
+.equalizer .bar {
+    width: 4px; /* Narrow bars */
+    background: rgba(255, 255, 255, 0.8);
+    margin: 0 2px; /* Horizontal spacing between bars */
+    animation: barAnimation 1s infinite steps(5);
+}
+
+/* Animation for bars */
+@keyframes barAnimation {
+    0% {
+        height: 20%;
+    }
+    20% {
+        height: 80%;
+    }
+    40% {
+        height: 40%;
+    }
+    60% {
+        height: 70%;
+    }
+    80% {
+        height: 30%;
+    }
+    100% {
+        height: 20%;
+    }
+}
+
+
+/* Post Content Box */
+.post-box {
+    background-color: #e4e4e4; /* White background for the content box */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 9999999;
+}
+
+/* Decorative Background */
+.post-background {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-color: transparent; /* Remove background color from main */
+}
+
+/* Markdown Content Styling */
+.markdown-body {
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        margin: 0;
+        padding: 0;
+        max-width: 100% !important;
+    }
+
+    .post-box {
+        padding: 0;
+        width: 100% !important;
+    }
+
+    .post-content {
+        padding: 0;
+    }
+
+    .markdown-body {
+        padding: 10px !important;
+    }
+
+    .equalizer .bar {
+        background: rgba(255, 255, 255, 0.2) !important;
+    }
+}
+
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Minimized Header with Equalizer on the Left */
+.minimized-header {
+    background-color: #1DB954;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.minimized-header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.minimized-header h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+.minimized-header h1 a:hover {
+    text-decoration: underline;
+}
+
+/* Equalizer Styles */
+/* (Include your equalizer styles here as per previous code) */
+
+/* Main Content */
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Markdown Content Styling */
+.markdown-body {
+    padding: 40px;
+    color: #333;
+}
+
+.markdown-body h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #1DB954;
+    padding-bottom: 10px;
+    color: #1DB954;
+}
+
+.markdown-body h2 {
+    font-size: 2em;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #1DB954;
+    padding-bottom: 8px;
+    color: #1DB954;
+}
+
+.markdown-body h3 {
+    font-size: 1.75em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #1DB954;
+}
+
+.markdown-body h4 {
+    font-size: 1.5em;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    color: #1DB954;
+}
+
+.markdown-body h5 {
+    font-size: 1.25em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #1DB954;
+}
+
+.markdown-body h6 {
+    font-size: 1em;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: #1DB954;
+}
+
+.markdown-body p {
+    margin-bottom: 20px;
+}
+
+.markdown-body a {
+    color: #1DB954;
+    text-decoration: none;
+    border-bottom: 1px solid #1DB954;
+}
+
+.markdown-body a:hover {
+    text-decoration: underline;
+}
+
+.markdown-body strong,
+.markdown-body b {
+    font-weight: bold;
+}
+
+.markdown-body em,
+.markdown-body i {
+    font-style: italic;
+}
+
+.markdown-body blockquote {
+    border-left: 4px solid #1DB954;
+    padding-left: 20px;
+    color: #666;
+    margin: 20px 0;
+    font-style: italic;
+    background-color: #f1f1f1;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+    margin: 20px 0;
+    padding-left: 40px;
+}
+
+.markdown-body ul li,
+.markdown-body ol li {
+    margin-bottom: 10px;
+}
+
+.markdown-body ul li::marker {
+    color: #1DB954;
+}
+
+.markdown-body ol li::marker {
+    color: #1DB954;
+}
+
+.markdown-body code {
+    background-color: #f1f1f1;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95em;
+}
+
+.markdown-body pre {
+    background-color: #f1f1f1;
+    padding: 20px;
+    overflow-x: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.markdown-body pre code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+}
+
+.markdown-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.markdown-body table th {
+    background-color: #1DB954;
+    color: white;
+}
+
+.markdown-body table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.markdown-body hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 40px 0;
+}
+
+.markdown-body img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.markdown-body del {
+    text-decoration: line-through;
+}
