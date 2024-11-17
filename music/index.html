@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Reviews</title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="website.css">
+</head>
+
+<body>
+<header>
+    <div class="equalizer" id="equalizer"></div>
+    <h1>Music Reviews</h1>
+    <p>Personal takes on albums, tracks, and artists.</p>
+</header>
+
+<main id="blog-container"></main>
+
+<!-- Place all scripts just before the closing </body> tag -->
+<script>
+    // Blog post metadata
+    const posts = [
+        {
+            title: "Led Zeppelin - Stairway to Heaven",
+            summary: "A timeless masterpiece blending folk and hard rock.",
+            cover: "images/lz.jpg",
+            link: "post.html?file=posts/post1.md",
+            date: "2024-11-01",
+        },
+    ];
+
+    // Generate blog posts dynamically
+    const container = document.getElementById("blog-container");
+    posts.forEach((post) => {
+        const postCard = `
+                <article class="post">
+                    <img src="${post.cover}" alt="${post.title} cover" class="post-cover">
+                    <div class="post-content">
+                        <h2><a href="${post.link}">${post.title}</a></h2>
+                        <p>${post.summary}</p>
+                        <small>${new Date(post.date).toDateString()}</small>
+                    </div>
+                </article>`;
+        container.innerHTML += postCard;
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const equalizer = document.getElementById('equalizer');
+        const numberOfBars = 30; // Adjust the number of bars as needed
+
+        for (let i = 0; i < numberOfBars; i++) {
+            const bar = document.createElement('div');
+            bar.classList.add('bar');
+
+            // Assign a random animation duration between 0.8s and 1.5s
+            const randomDuration = (Math.random() * 0.7 + 0.8).toFixed(2);
+            bar.style.animationDuration = `${randomDuration}s`;
+
+            // Assign a random animation delay between 0s and 0.5s
+            const randomDelay = (Math.random() * 0.5).toFixed(2);
+            bar.style.animationDelay = `${randomDelay}s`;
+
+            equalizer.appendChild(bar);
+        }
+    });
+</script>
+</body>
+
+</html>

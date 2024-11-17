@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Viewer</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="stylesheet" href="header.css">
+    <!-- Include Showdown.js in the head -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Header should be inside the body -->
+    <header>
+        <div class="equalizer" id="equalizer"></div>
+        <h1>Music Reviews</h1>
+        <p>Personal takes on albums, tracks, and artists.</p>
+    </header>
+
+    <main id="post-content" class="markdown-body">Loading...</main>
+
+    <!-- JavaScript code for Markdown conversion -->
+    <script>
+        // Get the Markdown file from the URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const file = urlParams.get("file");
+
+        if (file) {
+            fetch(file)
+                .then((response) => {
+                    if (!response.ok) throw new Error("Failed to load file");
+                    return response.text();
+                })
+                .then((markdownContent) => {
+                    // Convert Markdown to HTML using Showdown
+                    const converter = new showdown.Converter();
+                    // Render content
+                    document.getElementById("post-content").innerHTML = converter.makeHtml(markdownContent);
+
+                    // Set the page title from the first heading in the Markdown
+                    const firstHeading = document.querySelector(".markdown-body h1");
+                    if (firstHeading) {
+                        document.title = firstHeading.textContent;
+                    }
+                })
+                .catch((error) => {
+                    document.getElementById("post-content").innerHTML = `<p>Error: ${error.message}</p>`;
+                });
+        } else {
+            document.getElementById("post-content").innerHTML = "<p>No post specified.</p>";
+        }
+    </script>
+
+    <!-- JavaScript code for the equalizer animation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const equalizer = document.getElementById('equalizer');
+            const numberOfBars = 30; // Adjust the number of bars as needed
+
+            for (let i = 0; i < numberOfBars; i++) {
+                const bar = document.createElement('div');
+                bar.classList.add('bar');
+
+                // Assign a random animation duration between 0.8s and 1.5s
+                const randomDuration = (Math.random() * 0.7 + 0.8).toFixed(2);
+                bar.style.animationDuration = `${randomDuration}s`;
+
+                // Assign a random animation delay between 0s and 0.5s
+                const randomDelay = (Math.random() * 0.5).toFixed(2);
+                bar.style.animationDelay = `${randomDelay}s`;
+
+                equalizer.appendChild(bar);
+            }
+        });
+    </script>
+
+</body>
+</html>
