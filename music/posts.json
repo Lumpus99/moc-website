@@ -1,9 +1,9 @@
 [
     {
-        "title": "Led Zeppelin - Stairway to Heaven",
-        "description": "A timeless masterpiece blending folk and hard rock.",
-        "cover": "images/lz.jpg",
+        "title": "Welcome to my Music Blog!",
+        "description": "Welcome to my little corner of the internet! This is where I share songs that have ...",
+        "cover": "images/thinker.jpg",
         "link": "post.html?file=posts/post1.md",
-        "date": "2024-11-01"
+        "date": "2024-11-17"
     }
 ]

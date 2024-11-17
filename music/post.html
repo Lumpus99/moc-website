@@ -5,7 +5,7 @@
     <!-- Meta tags and title -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post Viewer</title>
+    <title>Mert's Music Post Viewer</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -20,76 +20,106 @@
 
 <body>
 
-    <!-- Minimized Header with Equalizer on the Left -->
-    <header class="minimized-header">
-        <div class="equalizer" id="equalizer"></div>
-        <h1><a href="index.html">Music Reviews</a></h1>
-    </header>
+<!-- Minimized Header with Equalizer on the Left -->
+<header class="minimized-header">
+    <div class="equalizer" id="equalizer"></div>
+    <h1><a href="index.html">Mert's Music Blog</a></h1>
+</header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Decorative Background -->
-        <div class="post-background"></div>
-
-        <!-- Post Content Box -->
-        <div class="post-box">
-            <div id="post-content" class="markdown-body"></div>
+<!-- Main Content -->
+<main>
+    <!-- Post Content Box -->
+    <div class="post-box">
+        <!-- Post Header (Date and Return Button) -->
+        <div class="post-header">
+            <!-- Return Button -->
+            <a href="index.html" class="return-button">← All Posts</a>
+            <!-- Post Date -->
+            <div id="post-date" class="post-date"></div>
         </div>
-    </main>
+        <!-- Post Content -->
+        <div id="post-content" class="markdown-body"></div>
+    </div>
+</main>
 
-    <!-- JavaScript code for Markdown conversion -->
-    <script>
-        // Get the Markdown file from the URL parameter
-        const urlParams = new URLSearchParams(window.location.search);
-        const file = urlParams.get("file");
+<!-- JavaScript code for Markdown conversion and date display -->
+<script>
+    // Get the Markdown file from the URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const file = urlParams.get("file");
 
-        if (file) {
-            fetch(file)
-                .then((response) => {
-                    if (!response.ok) throw new Error("Failed to load file");
-                    return response.text();
-                })
-                .then((markdownContent) => {
-                    // Convert Markdown to HTML using Showdown
-                    const converter = new showdown.Converter();
-                    document.getElementById("post-content").innerHTML = converter.makeHtml(markdownContent);
+    if (file) {
+        // Fetch the posts metadata from the JSON file
+        fetch('posts.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to load posts metadata');
+                }
+                return response.json();
+            })
+            .then(posts => {
+                // Find the post that matches the current file
+                const currentPost = posts.find(post => post.link.includes(file));
 
-                    // Set the page title from the first heading in the Markdown
-                    const firstHeading = document.querySelector(".markdown-body h1");
-                    if (firstHeading) {
-                        document.title = firstHeading.textContent;
-                    }
-                })
-                .catch((error) => {
-                    document.getElementById("post-content").innerHTML = `<p>Error: ${error.message}</p>`;
-                });
-        } else {
-            document.getElementById("post-content").innerHTML = "<p>No post specified.</p>";
+                if (currentPost) {
+                    // Display the date
+                    document.getElementById('post-date').textContent = new Date(currentPost.date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
+                } else {
+                    document.getElementById('post-date').textContent = '';
+                }
+
+                // Fetch and display the markdown content
+                return fetch(file);
+            })
+            .then(response => {
+                if (!response.ok) throw new Error("Failed to load file");
+                return response.text();
+            })
+            .then(markdownContent => {
+                // Convert Markdown to HTML using Showdown
+                const converter = new showdown.Converter();
+                document.getElementById("post-content").innerHTML = converter.makeHtml(markdownContent);
+
+                // Set the page title from the first heading in the Markdown
+                const firstHeading = document.querySelector(".markdown-body h1");
+                if (firstHeading) {
+                    document.title = firstHeading.textContent;
+                }
+            })
+            .catch(error => {
+                document.getElementById("post-content").innerHTML = `<p>Error: ${error.message}</p>`;
+            });
+    } else {
+        document.getElementById("post-content").innerHTML = "<p>No post specified.</p>";
+    }
+</script>
+
+<!-- JavaScript code for the equalizer animation -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const equalizer = document.getElementById('equalizer');
+        const numberOfBars = 30; // Adjust the number of bars as needed
+
+        for (let i = 0; i < numberOfBars; i++) {
+            const bar = document.createElement('div');
+            bar.classList.add('bar');
+
+            // Assign a random animation duration between 0.8s and 1.5s
+            const randomDuration = (Math.random() * 0.7 + 0.8).toFixed(2);
+            bar.style.animationDuration = `${randomDuration}s`;
+
+            // Assign a random animation delay between 0s and 0.5s
+            const randomDelay = (Math.random() * 0.5).toFixed(2);
+            bar.style.animationDelay = `${randomDelay}s`;
+
+            equalizer.appendChild(bar);
         }
-    </script>
-
-    <!-- JavaScript code for the equalizer animation -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const equalizer = document.getElementById('equalizer');
-            const numberOfBars = 20; // Adjust the number of bars as needed
-
-            for (let i = 0; i < numberOfBars; i++) {
-                const bar = document.createElement('div');
-                bar.classList.add('bar');
-
-                // Assign a random animation duration between 0.8s and 1.5s
-                const randomDuration = (Math.random() * 0.7 + 0.8).toFixed(2);
-                bar.style.animationDuration = `${randomDuration}s`;
-
-                // Assign a random animation delay between 0s and 0.5s
-                const randomDelay = (Math.random() * 0.5).toFixed(2);
-                bar.style.animationDelay = `${randomDelay}s`;
-
-                equalizer.appendChild(bar);
-            }
-        });
-    </script>
+    });
+</script>
 
 </body>
 </html>

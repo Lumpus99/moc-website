@@ -34,6 +34,57 @@ body {
     text-decoration: underline;
 }
 
+/* Post Header Styling */
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Return Button Styling */
+.return-button {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #1DB954;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.return-button:hover {
+    background-color: #17a74b;
+}
+
+.return-button:active {
+    background-color: #14843e;
+}
+
+.return-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(29, 185, 84, 0.5);
+}
+
+/* Post Date Styling */
+.post-date {
+    font-size: 0.9em;
+    color: #999;
+}
+
+/* Adjustments for Mobile Devices */
+@media (max-width: 600px) {
+    .post-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .post-header .return-button {
+        margin-bottom: 10px;
+    }
+}
+
 /* Equalizer Styles */
 .equalizer {
     display: flex;
@@ -178,7 +229,7 @@ main {
 
 /* Markdown Content Styling */
 .markdown-body {
-    padding: 40px;
+    padding: 0 40px 40px;
     color: #333;
 }
 
@@ -230,6 +281,7 @@ main {
 
 .markdown-body p {
     margin-bottom: 20px;
+    text-align: justify;
 }
 
 .markdown-body a {
