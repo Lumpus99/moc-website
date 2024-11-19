@@ -87,12 +87,153 @@ header p {
 
 @keyframes gradientAnimation {
     0% {
-        background-position: 0% 50%;
+        background-position: 0 50%;
     }
     50% {
         background-position: 100% 50%;
     }
     100% {
-        background-position: 0% 50%;
+        background-position: 0 50%;
+    }
+}
+
+
+
+/* Navigation bar styling */
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Thin separator line under the navbar */
+}
+
+.nav-links li {
+    display: inline-block;
+    position: relative; /* Required for separator between items */
+}
+
+.nav-links li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -10px; /* Adjusted to place separator centrally between items */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 16px; /* Reduced height of the separator */
+    background-color: rgba(255, 255, 255, 0.2); /* Subtle white separator */
+}
+
+.nav-links a {
+    color: white;
+    font-size: 1em;
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 4px 12px; /* Reduced padding to prevent overlapping */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 3px; /* Reduced border radius for a more compact look */
+}
+
+.nav-links a:hover {
+    background-color: #d4a017;
+    color: #000;
+    border-radius: 3px; /* Ensure hover effect has the same radius */
+}
+
+
+/* Hamburger Menu for Mobile */
+.hamburger {
+    display: none;
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* Adjust navigation button size for mobile */
+@media (max-width: 768px) {
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: rgba(37, 105, 188, 0.95);
+        border-radius: 12px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        width: 240px;
+        padding: 15px;
+        z-index: 999999;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        pointer-events: none; /* Prevent interaction when hidden */
+    }
+
+    .nav-links.active {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto; /* Enable interaction when visible */
+    }
+
+    .nav-links li {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 83%;
+        font-size: 1.1em;
+        padding: 12px 20px;
+        text-align: center;
+        background-color: #1f3b57;
+        color: white;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        background-color: #d4a017;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .hamburger {
+        display: block;
+        font-size: 2em;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1000000;
+    }
+
+    .hamburger div {
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        margin: 6px 0;
+        transition: all 0.3s ease;
+    }
+
+    /* When the hamburger menu is active */
+    .hamburger.active div:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .hamburger.active div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active div:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
     }
 }

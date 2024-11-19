@@ -126,11 +126,7 @@ body {
 
 /* Post Content Box */
 .post-box {
-    background-color: #e4e4e4; /* White background for the content box */
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    z-index: 9999999;
+    padding: 40px 40px 0;
 }
 
 /* Decorative Background */
