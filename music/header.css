@@ -161,7 +161,7 @@ header p {
         position: absolute;
         top: 60px;
         right: 20px;
-        background-color: rgba(37, 105, 188, 0.95);
+        background-color: rgb(19, 122, 41);
         border-radius: 12px;
         box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         width: 240px;
@@ -191,7 +191,7 @@ header p {
         font-size: 1.1em;
         padding: 12px 20px;
         text-align: center;
-        background-color: #1f3b57;
+        background-color: #1f572b;
         color: white;
         border-radius: 8px;
         margin-bottom: 10px;
@@ -236,4 +236,12 @@ header p {
     .hamburger.active div:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -7px);
     }
+}
+
+
+.minimized-header .nav-links {
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    transform: translateY(-50%);
 }

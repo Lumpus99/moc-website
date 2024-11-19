@@ -24,6 +24,21 @@
 <header class="minimized-header">
     <div class="equalizer" id="equalizer"></div>
     <h1><a href="index.html">Mert's Music Blog</a></h1>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul class="nav-links">
+            <li><a href="/music/">Home</a></li>
+            <li><a href="/">About Me</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hamburger Menu for Mobile -->
+    <div class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
 </header>
 
 <!-- Main Content -->
@@ -117,6 +132,37 @@
             bar.style.animationDelay = `${randomDelay}s`;
 
             equalizer.appendChild(bar);
+        }
+    });
+</script>
+
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const navItems = document.querySelectorAll('.nav-links a');
+
+    // Toggle the hamburger menu on click
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    });
+
+    // Close the hamburger menu when a nav link is clicked
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('active');
+        });
+    });
+
+    // Close the menu if clicked outside
+    document.addEventListener('click', (event) => {
+        const isClickInside = hamburger.contains(event.target) || navLinks.contains(event.target);
+
+        if (!isClickInside) {
+            // If the click is outside the menu and hamburger, close the menu
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('active');
         }
     });
 </script>
