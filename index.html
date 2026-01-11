@@ -25,6 +25,7 @@
 
     <!-- Include style sheets -->
     <link rel="stylesheet" href="main.css"/>
+    <link rel="stylesheet" href="animations.css"/>
 
     <!-- Fonts from Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -95,8 +96,11 @@
 
     <div class="container">
         <!-- Avatar image inside the white background container -->
-        <div class="avatar-container">
-            <img src="mert.gif" alt="Mert Avatar" class="avatar"/>
+        <div class="avatar-wrapper">
+            <div class="avatar-container">
+                <img src="mert.gif" alt="Mert Avatar" class="avatar"/>
+            </div>
+            <div id="mertCounter" class="mert-counter is-hidden" aria-live="polite"></div>
         </div>
 
         <!-- Introduction Title and Subtitle -->
@@ -438,31 +442,7 @@
     });
 </script>
 
-<script>
-    // Function to randomly trigger spin animation with a low probability
-    function triggerSpin() {
-        const avatar = document.querySelector('.avatar');
-
-        // Generate a random number between 0 and 1
-        const randomChance = Math.random();
-
-
-        // If randomChance is less than 0.05 (5% chance), trigger the spin
-        if (randomChance < 0.1) {
-            avatar.classList.add('spin-animation');
-
-            // Remove the spin class after the animation completes (2 seconds)
-            setTimeout(() => {
-                avatar.classList.remove('spin-animation');
-                console.log("Spin animation removed");
-            }, 2000); // 2s matches the duration of the spin animation
-        }
-    }
-
-    // Attach the random trigger only to the click event
-    const avatarContainer = document.querySelector('.avatar-container');
-    avatarContainer.addEventListener('click', triggerSpin);
-</script>
+<script src="animations.js"></script>
 
 </body>
 
