@@ -69,7 +69,7 @@ a:not(.external-link):not(.icons a):not(.nav-links a):hover::after {
     border-radius: 0;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     animation: slowPan 30s ease-in-out infinite;
 }
 
@@ -578,15 +578,21 @@ h3:hover {
     opacity: 1;
 }
 
+/* Mobile Navigation Menu (hidden by default) */
+.nav-links.mobile-nav {
+    display: none;
+}
+
 /* Hamburger Menu for Mobile */
 .hamburger {
     display: none;
     font-size: 2em;
     color: white;
     cursor: pointer;
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 20px;
+    z-index: 2147483647;
 }
 
 /* ==================== */
@@ -635,10 +641,16 @@ h3:hover {
         flex-basis: 100%;
     }
 
-    .nav-links {
+    /* Hide desktop nav on mobile */
+    .nav-links.desktop-nav {
+        display: none !important;
+    }
+
+    /* Mobile nav styles */
+    .nav-links.mobile-nav {
         display: flex;
         flex-direction: column;
-        position: absolute;
+        position: fixed;
         top: 60px;
         right: 20px;
         background-color: rgba(26, 35, 50, 0.98);
@@ -646,28 +658,31 @@ h3:hover {
         box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         width: 240px;
         padding: 15px;
-        z-index: 999999;
+        z-index: 2147483646;
         opacity: 0;
         transform: translateY(-20px);
         transition: transform 0.3s ease, opacity 0.3s ease;
         pointer-events: none;
+        list-style: none;
+        margin: 0;
     }
 
-    .nav-links.active {
+    .nav-links.mobile-nav.active {
         opacity: 1;
         transform: translateY(0);
         pointer-events: auto;
     }
 
-    .nav-links li {
+    .nav-links.mobile-nav li {
         margin: 0;
         padding: 0;
         width: 100%;
+        list-style: none;
     }
 
-    .nav-links a {
+    .nav-links.mobile-nav a {
         display: block;
-        width: 83%;
+        width: 100%;
         font-size: 1.1em;
         padding: 12px 20px;
         text-align: center;
@@ -680,7 +695,7 @@ h3:hover {
         border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .nav-links a:hover {
+    .nav-links.mobile-nav a:hover {
         background: linear-gradient(135deg, rgba(168, 216, 234, 0.9), rgba(123, 200, 212, 0.9));
         color: #1a2332;
         transform: translateY(-3px);
@@ -693,10 +708,13 @@ h3:hover {
         font-size: 2em;
         color: white;
         cursor: pointer;
-        position: absolute;
+        position: fixed;
         top: 20px;
         right: 20px;
-        z-index: 1000000;
+        z-index: 2147483647;
+        background: rgba(26, 35, 50, 0.9);
+        padding: 10px;
+        border-radius: 8px;
     }
 
     .hamburger div {

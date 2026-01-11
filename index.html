@@ -55,12 +55,32 @@
 
 <body>
 
+<!-- Hamburger Menu for Mobile (outside header for z-index) -->
+<div class="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+<!-- Mobile Navigation Menu -->
+<ul class="nav-links mobile-nav">
+    <li><a href="#research-interests">Research Interests</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#research-experience">Research</a></li>
+    <li><a href="#work-experience">Work</a></li>
+    <li><a href="#teaching">Teaching</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#awards">Awards</a></li>
+    <li><a href="#cv">CV</a></li>
+    <li><a href="/music">Music Blog</a></li>
+</ul>
+
 <!-- Banner Header Section -->
 <section id="header">
 
-    <!-- Navigation Bar -->
+    <!-- Navigation Bar (Desktop) -->
     <nav>
-        <ul class="nav-links">
+        <ul class="nav-links desktop-nav">
             <li><a href="#research-interests">Research Interests</a></li>
             <li><a href="#publications">Publications</a></li>
             <li><a href="#research-experience">Research</a></li>
@@ -72,13 +92,6 @@
             <li><a href="/music">Music Blog</a></li>
         </ul>
     </nav>
-
-    <!-- Hamburger Menu for Mobile -->
-    <div class="hamburger">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
 
     <div class="container">
         <!-- Avatar image inside the white background container -->
@@ -396,30 +409,30 @@
 
 <script>
     const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    const navItems = document.querySelectorAll('.nav-links a');
+    const mobileNav = document.querySelector('.nav-links.mobile-nav');
+    const mobileNavItems = document.querySelectorAll('.nav-links.mobile-nav a');
 
     // Toggle the hamburger menu on click
     hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
+        mobileNav.classList.toggle('active');
         hamburger.classList.toggle('active');
     });
 
     // Close the hamburger menu when a nav link is clicked
-    navItems.forEach(item => {
+    mobileNavItems.forEach(item => {
         item.addEventListener('click', () => {
-            navLinks.classList.remove('active');
+            mobileNav.classList.remove('active');
             hamburger.classList.remove('active');
         });
     });
 
     // Close the menu if clicked outside
     document.addEventListener('click', (event) => {
-        const isClickInside = hamburger.contains(event.target) || navLinks.contains(event.target);
+        const isClickInside = hamburger.contains(event.target) || mobileNav.contains(event.target);
 
         if (!isClickInside) {
             // If the click is outside the menu and hamburger, close the menu
-            navLinks.classList.remove('active');
+            mobileNav.classList.remove('active');
             hamburger.classList.remove('active');
         }
     });
