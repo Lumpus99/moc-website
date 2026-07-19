@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Mert Onur Cakiroglu · Curriculum Vitae</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --paper: #F7F3EB;
+    --ink: #1E1A15;
+    --ink-muted: #5C554B;
+    --ink-hairline: rgba(30, 26, 21, 0.18);
+    --rubric: #B5311D;
+    --rubric-small: #8F2B15;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: #888; }
+  @page { size: letter; margin: 0; }
+
+  .page {
+    width: 8.5in;
+    height: 11in;
+    background: var(--paper);
+    color: var(--ink);
+    padding: 0.55in 0.7in 0.5in;
+    page-break-after: always;
+    position: relative;
+    overflow: hidden;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    font-family: "Newsreader", Georgia, serif;
+    font-optical-sizing: auto;
+    font-size: 9.4pt;
+    line-height: 1.45;
+  }
+
+  .mono { font-family: "Fragment Mono", monospace; }
+
+  /* running head */
+  .running-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: "Fragment Mono", monospace;
+    font-size: 6.8pt;
+    letter-spacing: 0.09em;
+    margin-bottom: 5px;
+  }
+  .running-head .rh-mid { color: var(--ink-muted); }
+  .double-rule { border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); height: 4px; margin-bottom: 14px; }
+
+  /* masthead */
+  .kicker {
+    font-family: "Fragment Mono", monospace;
+    font-size: 7.2pt;
+    letter-spacing: 0.13em;
+    color: var(--rubric-small);
+    margin-bottom: 8px;
+  }
+  h1 {
+    font-family: "Fraunces", serif;
+    font-variation-settings: "opsz" 144;
+    font-weight: 600;
+    font-size: 26pt;
+    line-height: 1;
+    letter-spacing: -0.015em;
+    margin-bottom: 6px;
+  }
+  h1 .period { color: var(--rubric); }
+  .contact {
+    font-family: "Fragment Mono", monospace;
+    font-size: 7pt;
+    letter-spacing: 0.03em;
+    color: var(--ink-muted);
+    margin-bottom: 11px;
+  }
+  .contact b { color: var(--ink); font-weight: 400; }
+
+  .abstract {
+    font-size: 9.8pt;
+    max-width: 6.5in;
+    margin-bottom: 5px;
+  }
+  .abstract strong { font-weight: 600; }
+  .index-terms {
+    font-family: "Fragment Mono", monospace;
+    font-size: 6.9pt;
+    line-height: 1.55;
+    color: var(--ink-muted);
+    max-width: 6.6in;
+    margin-bottom: 12px;
+  }
+  .index-terms b { color: var(--ink); font-weight: 400; }
+
+  /* sections */
+  .sec { margin-bottom: 10px; }
+  .sec-label {
+    font-family: "Fragment Mono", monospace;
+    font-size: 7.4pt;
+    letter-spacing: 0.14em;
+    color: var(--rubric-small);
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 3px;
+    margin-bottom: 8px;
+  }
+  .sub-label {
+    font-family: "Fraunces", serif;
+    font-variation-settings: "opsz" 30;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 10pt;
+    margin: 6px 0 4px;
+  }
+
+  /* record rows */
+  .row { display: flex; gap: 14px; padding: 3px 0; }
+  .row + .row { border-top: 1px solid var(--ink-hairline); }
+  .row dt {
+    font-family: "Fragment Mono", monospace;
+    font-size: 7pt;
+    color: var(--ink-muted);
+    flex: 0 0 0.72in;
+    padding-top: 2px;
+  }
+  .row dd { flex: 1; }
+  .row dd b { font-weight: 600; }
+  .note { color: var(--ink-muted); font-style: italic; font-size: 9pt; }
+
+  /* citations */
+  .cite {
+    display: flex;
+    gap: 8px;
+    padding: 2.5px 0;
+  }
+  .cite .no {
+    font-family: "Fragment Mono", monospace;
+    font-size: 7.4pt;
+    color: var(--rubric);
+    flex: 0 0 0.26in;
+    padding-top: 1.5px;
+  }
+  .cite .body { flex: 1; }
+  .cite .t { font-weight: 600; }
+  .cite .v { font-style: italic; }
+  .cite b.self { font-weight: 600; }
+  .cite .meta {
+    font-family: "Fragment Mono", monospace;
+    font-size: 6.6pt;
+    letter-spacing: 0.02em;
+    color: var(--ink-muted);
+  }
+  .cite .meta .tag { color: var(--rubric-small); }
+
+  .two-col { display: flex; gap: 0.32in; }
+  .two-col > div { flex: 1; }
+
+  .fine {
+    font-family: "Fragment Mono", monospace;
+    font-size: 6.6pt;
+    letter-spacing: 0.06em;
+    color: var(--ink-muted);
+  }
+
+  .page-foot {
+    position: absolute;
+    left: 0.7in; right: 0.7in; bottom: 0.34in;
+    border-top: 1px solid var(--ink-hairline);
+    padding-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Fragment Mono", monospace;
+    font-size: 6.4pt;
+    letter-spacing: 0.09em;
+    color: var(--ink-muted);
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════ PAGE 1 ══════════════ -->
+<div class="page">
+  <div class="running-head">
+    <span>CAKIROGLU,&nbsp;M.&nbsp;O.</span>
+    <span class="rh-mid">CURRICULUM&nbsp;VITAE</span>
+    <span>JULY&nbsp;2026</span>
+  </div>
+  <div class="double-rule"></div>
+
+  <p class="kicker">DOCTORAL&nbsp;RESEARCHER&nbsp;·&nbsp;COMPUTER&nbsp;SCIENCE</p>
+  <h1>Mert Onur Cakiroglu<span class="period">.</span></h1>
+  <p class="contact">
+    <b>meocakir@iu.edu</b> · mert.it.com · Bloomington,&nbsp;IN<br/>
+    github.com/Lumpus99 · linkedin.com/in/mert-onur-cakiroglu · ORCID&nbsp;0009-0001-0798-1361
+  </p>
+
+  <p class="abstract"><strong>Abstract:</strong> I teach machines to read the structure hidden in sequences. My
+    research turns video, electricity grids, glucose traces, and proteins into symbolic graphs (de Bruijn graphs,
+    borrowed from genomics) so that neural models can reason over them. Eleven works spanning <i>Scientific
+    Reports</i>, <i>IEEE Access</i>, <i>Machine Learning: Science and Technology</i>, <i>IEEE OAJPE</i>, and an
+    ICML 2025 workshop; first author on ten.</p>
+  <p class="index-terms"><b>Index&nbsp;Terms:</b> de Bruijn graphs · video understanding · time-series forecasting ·
+    self-supervised &amp; federated learning · graph neural networks · representation learning · reinforcement
+    learning · PyTorch</p>
+
+  <div class="sec">
+    <p class="sec-label">EDUCATION</p>
+    <dl>
+      <div class="row">
+        <dt>2023–</dt>
+        <dd><b>Ph.D., Computer Science</b> · Indiana University Bloomington, Luddy School of Informatics, Computing,
+          and Engineering<br/><span class="note">Advisor: Prof. Mehmet M. Dalkilic · Co-advisor: Dr. Hasan
+          Kurban</span></dd>
+      </div>
+      <div class="row">
+        <dt>2017–21</dt>
+        <dd><b>B.S., Computer Science</b> · TOBB University of Economics and Technology, Ankara</dd>
+      </div>
+    </dl>
+  </div>
+
+  <div class="sec">
+    <p class="sec-label">PUBLICATIONS</p>
+
+    <p class="sub-label">Peer-Reviewed Journals</p>
+
+    <div class="cite">
+      <span class="no">[1]</span>
+      <div class="body"><b class="self">M. O. Cakiroglu</b>, I. B. Altun, S. R. Fahim, H. Kurban, M. Dalkilic,
+        R. Atat, A. Takiddin, E. Serpedin. <span class="t">An Extended Frequency-Improved Legendre Memory Model for
+        Enhanced Long-Term Electricity Load Forecasting.</span> <span class="v">IEEE Open Access Journal of Power
+        and Energy</span>, 12, 691–701, 2025.<br/>
+        <span class="meta">DOI&nbsp;10.1109/OAJPE.2025.3615513</span></div>
+    </div>
+
+    <div class="cite">
+      <span class="no">[2]</span>
+      <div class="body"><b class="self">M. O. Cakiroglu</b>, H. Kurban, E. Buxton, M. Dalkilic.
+        <span class="t">A Novel Discrete Time Series Representation with De Bruijn Graphs for Enhanced Forecasting
+        Using TimesNet.</span> <span class="v">IEEE Access</span>, 13, 123182–123198, 2025.<br/>
+        <span class="meta">DOI&nbsp;10.1109/ACCESS.2025.3588507 · CODE&nbsp;github.com/KurbanIntelligenceLab/dBGTime-Series-Library</span></div>
+    </div>
+
+    <div class="cite">
+      <span class="no">[3]</span>
+      <div class="body"><b class="self">M. O. Cakiroglu</b>, H. Kurban, L. Aljihmani, K. Qaraqe, G. Petrovski,
+        M. M. Dalkilic. <span class="t">A Reinforcement Learning Approach to Effective Forecasting of Pediatric
+        Hypoglycemia in Diabetes I Patients Using an Extended de Bruijn Graph.</span> <span class="v">Scientific
+        Reports</span>, 14, 31251, 2024.<br/>
+        <span class="meta"><span class="tag">[NATURE&nbsp;PORTFOLIO]</span> DOI&nbsp;10.1038/s41598-024-82649-4 ·
+        CODE&nbsp;github.com/KurbanIntelligenceLab/dBG-Hypoglycemia-Forecast</span></div>
+    </div>
+
+    <div class="cite">
+      <span class="no">[4]</span>
+      <div class="body"><b class="self">M. O. Cakiroglu</b>, H. Kurban, P. Sharma, M. O. Kulekci, E. K. Buxton,
+        M. Raeeszadeh-Sarmazdeh, M. M. Dalkilic. <span class="t">An Extended de Bruijn Graph for Feature Engineering
+        Over Biological Sequential Data.</span> <span class="v">Machine Learning: Science and Technology</span>,
+        5(3), 035020, 2024.<br/>
+        <span class="meta"><span class="tag">[IF&nbsp;6.8&nbsp;·&nbsp;OPEN&nbsp;ACCESS]</span>
+        DOI&nbsp;10.1088/2632-2153/ad5fde</span></div>
+    </div>
+
+    <p class="sub-label">Conferences &amp; Workshops</p>
+
+    <div class="cite">
+      <span class="no">[5]</span>
+      <div class="body"><b class="self">M. O. Cakiroglu</b>, I. B. Altun, M. Dalkilic, E. Buxton, H. Kurban.
+        <span class="t">Multivariate de Bruijn Graphs: A Symbolic Graph Framework for Time Series Forecasting.</span>
+        <span class="v">ICML 2025, 1st Workshop on Foundation Models for Structured Data</span>, Vancouver, 2025.<br/>
+        <span class="meta"><span class="tag">[ICML&nbsp;WORKSHOP]</span> ARXIV&nbsp;2505.22768 ·
+        CODE&nbsp;github.com/KurbanIntelligenceLab/MultdBG-Time-Series-Library</span></div>
+    </div>
+
+    <div class="cite">
+      <span class="no">[6]</span>
+      <div class="body"><b class="self">M. O. Cakiroglu</b>, I. B. Altun, S. R. Fahim, H. Kurban, M. M. Dalkilic,
+        R. Atat. <span class="t">De Bruijn Graph-Enhanced Time Series Models for Electricity Load
+        Forecasting.</span> <span class="v">International Symposium on Signals, Circuits and Systems (ISSCS)</span>,
+        Iasi, Romania, pp. 1–4, 2025.<br/>
+        <span class="meta">DOI&nbsp;10.1109/ISSCS66034.2025.11105646</span></div>
+    </div>
+
+  </div>
+
+  <div class="page-foot">
+    <span>CAKIROGLU,&nbsp;M.&nbsp;O.&nbsp;·&nbsp;CURRICULUM&nbsp;VITAE</span>
+    <span>1&nbsp;/&nbsp;2</span>
+  </div>
+</div>
+
+<!-- ══════════════ PAGE 2 ══════════════ -->
+<div class="page">
+  <div class="running-head">
+    <span>CAKIROGLU,&nbsp;M.&nbsp;O.</span>
+    <span class="rh-mid">CURRICULUM&nbsp;VITAE</span>
+    <span>JULY&nbsp;2026</span>
+  </div>
+  <div class="double-rule"></div>
+
+  <div class="sec">
+    <p class="sub-label" style="margin-top:0">Conferences &amp; Workshops (continued)</p>
+
+    <div class="cite">
+      <span class="no">[7]</span>
+      <div class="body"><b class="self">M. O. Cakiroglu</b>, H. Kurban, E. K. Buxton, M. Dalkilic.
+        <span class="t">A Novel Discrete Time Series Representation with De Bruijn Graphs for Enhanced Forecasting
+        Using TimesNet (Extended Abstract).</span> <span class="v">IEEE International Conference on Data Science and
+        Advanced Analytics (DSAA)</span>, San Diego, pp. 1–3, 2024.<br/>
+        <span class="meta">DOI&nbsp;10.1109/DSAA61799.2024.10722826</span></div>
+    </div>
+
+    <p class="sub-label">Preprints</p>
+
+    <div class="cite">
+      <span class="no">[8]</span>
+      <div class="body"><b class="self">M. O. Cakiroglu</b>, M. Dalkilic, H. Kurban. <span class="t">The Spectrum Is
+        Not Enough: When Context Helps Time-Series Forecasting.</span> <span class="v">arXiv:2607.13006</span>,
+        2026.<br/>
+        <span class="meta">CODE&nbsp;github.com/KurbanIntelligenceLab/SINE</span></div>
+    </div>
+
+    <div class="cite">
+      <span class="no">[9]</span>
+      <div class="body"><b class="self">M. O. Cakiroglu</b>, Z. Lu, M. M. Dalkilic, H. Kurban.
+        <span class="t">Auditing Generalization in AI-Generated Video Detection: A Six-Control Protocol and the
+        VidAudit Toolkit.</span> <span class="v">arXiv:2606.31004</span>, 2026.<br/>
+        <span class="meta">CODE&nbsp;github.com/KurbanIntelligenceLab/vidaudit</span></div>
+    </div>
+
+    <div class="cite">
+      <span class="no">[10]</span>
+      <div class="body">I. B. Altun, <b class="self">M. O. Cakiroglu</b>, E. Buxton, M. Dalkilic, H. Kurban.
+        <span class="t">LGQ: Learnable Geometric Quantization for Image Tokenization.</span>
+        <span class="v">arXiv:2602.16086</span>, 2026.<br/>
+        <span class="meta">CODE&nbsp;github.com/KurbanIntelligenceLab/LGQ</span></div>
+    </div>
+
+    <div class="cite">
+      <span class="no">[11]</span>
+      <div class="body"><b class="self">M. O. Cakiroglu</b>, I. B. Altun, Z. Lu, M. Dalkilic, H. Kurban.
+        <span class="t">Temporal Realism Evaluation of Generated Videos Using Compressed-Domain Motion
+        Vectors.</span> <span class="v">arXiv:2511.13897</span>, 2025.<br/>
+        <span class="meta"><span class="tag">[IN&nbsp;SUBMISSION]</span>
+        CODE&nbsp;github.com/KurbanIntelligenceLab/Motion-Vector-Learning</span></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <p class="sec-label">RESEARCH&nbsp;APPOINTMENTS</p>
+    <dl>
+      <div class="row">
+        <dt>2024</dt>
+        <dd><b>Research Associate</b> · Texas A&amp;M University at Qatar, Doha<br/>
+          <span class="note">Self-supervised learning frameworks for video and federated video learning in the
+          compressed domain, preserving privacy and reducing communication overhead.</span></dd>
+      </div>
+      <div class="row">
+        <dt>2023–</dt>
+        <dd><b>Student Researcher</b> · Kurban Intelligence Lab<br/>
+          <span class="note">De Bruijn graph representations for time series, clinical forecasting, protein
+          classification, and video understanding.</span></dd>
+      </div>
+    </dl>
+  </div>
+
+  <div class="sec">
+    <p class="sec-label">TEACHING</p>
+    <dl>
+      <div class="row">
+        <dt>2023–</dt>
+        <dd><b>CSCI-C 200 · Introduction to Computers and Programming</b> · Associate Instructor, Indiana
+          University<br/><span class="note">with Prof. Mehmet M. Dalkilic</span></dd>
+      </div>
+      <div class="row">
+        <dt>2024</dt>
+        <dd><b>CSCI-B 657 · Computer Vision</b> · Associate Instructor, Indiana University<br/>
+          <span class="note">with Prof. David Crandall</span></dd>
+      </div>
+    </dl>
+  </div>
+
+  <div class="two-col">
+    <div class="sec">
+      <p class="sec-label">RECOGNITION</p>
+      <dl>
+        <div class="row">
+          <dt>2023</dt>
+          <dd><b>Luddy Doctoral Associate Instructor Fellowship</b> · Luddy School of Informatics, Computing, and
+            Engineering</dd>
+        </div>
+      </dl>
+    </div>
+    <div class="sec">
+      <p class="sec-label">OPEN&nbsp;SOURCE</p>
+      <dl>
+        <div class="row">
+          <dt>2024–</dt>
+          <dd>Maintainer of the research code behind refs [1]–[11] at
+            <b>github.com/KurbanIntelligenceLab</b></dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+
+  <div class="sec">
+    <p class="sec-label">INDUSTRY</p>
+    <dl>
+      <div class="row">
+        <dt>2021–23</dt>
+        <dd><b>Full-Stack Software Developer</b> · Innova IT Solutions<br/>
+          <span class="note">Built MARS, a centralized fault-management system for national telecommunication
+          networks: Spring Boot microservices over PL/SQL and MongoDB, React and Vaadin front ends, delivered in
+          an agile environment.</span></dd>
+      </div>
+    </dl>
+  </div>
+
+  <p class="fine">INTERESTS&nbsp;·&nbsp;ELECTRIC&nbsp;GUITAR&nbsp;·&nbsp;LINUX&nbsp;&amp;&nbsp;OPEN-SOURCE&nbsp;SOFTWARE</p>
+
+  <div class="page-foot">
+    <span>TYPESET&nbsp;IN&nbsp;FRAUNCES,&nbsp;NEWSREADER&nbsp;&amp;&nbsp;FRAGMENT&nbsp;MONO&nbsp;·&nbsp;INK&nbsp;#1E1A15&nbsp;ON&nbsp;IVORY&nbsp;WOVE&nbsp;#F7F3EB</span>
+    <span>2&nbsp;/&nbsp;2</span>
+  </div>
+</div>
+
+</body>
+</html>

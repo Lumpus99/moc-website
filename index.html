@@ -1,450 +1,803 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
-
 <head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Mert Onur Cakiroglu · Selected Works</title>
+  <meta name="description" content="Mert Onur Cakiroglu is a doctoral researcher in Computer Science at Indiana University Bloomington. He turns video, time series, and proteins into symbolic graphs that machines can reason about."/>
 
-    <!-- Define title -->
-    <title>Mert Onur Cakiroglu</title>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mert Onur Cakiroglu · Selected Works"/>
+  <meta property="og:description" content="Doctoral researcher, Indiana University Bloomington. Machine learning for video understanding, time-series forecasting, and de Bruijn graph sequence modeling."/>
+  <meta property="og:url" content="https://mert.it.com"/>
+  <meta property="og:type" content="website"/>
 
-    <!-- Include favicon -->
-    <link rel="icon" type="image/png" href="favicon.png" sizes="32x32"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link rel="icon" type="image/png" href="favicon.png" sizes="32x32"/>
 
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Mert Onur Cakiroglu"/>
-    <meta property="og:description"
-          content="Ph.D. student in Computer Science at Indiana University, focused on machine learning for video understanding and time series forecasting."/>
-    <meta property="og:image" content="https://mert.it.com/mert.gif"/>
-    <!-- URL to your avatar or any image -->
-    <meta property="og:url" content="https://mert.it.com/mert.gif"/>
-    <meta property="og:type" content="website"/>
+  <!-- Fonts: Fraunces (display, with SOFT/WONK axes), Newsreader (body, true italic), Fragment Mono (metadata) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0,0..1;1,9..144,100..900,0,0..1&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet"/>
 
-    <!-- Include style sheets -->
-    <link rel="stylesheet" href="main.css"/>
-    <link rel="stylesheet" href="animations.css"/>
-
-    <!-- Fonts from Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;600&display=swap" rel="stylesheet"/>
-
-    <!-- Load FontAwesome (for icons) -->
-    <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-            integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-            crossorigin="anonymous"
-    />
-
-    <!-- Load Academicons (for more icons) -->
-    <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.2/css/academicons.min.css"
-            integrity="sha512-KlJCpRsLf+KKu2VQa5vmRuClRFjxc5lXO03ixZt82HZUk41+1I0bD8KBSA0fY290ayMfWYI9udIqeOWSu1/uZg=="
-            crossorigin="anonymous"
-    />
-    <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    />
-
+  <link rel="stylesheet" href="styles.css"/>
 </head>
-
 <body>
 
-<!-- Hamburger Menu for Mobile (outside header for z-index) -->
-<div class="hamburger">
-    <div></div>
-    <div></div>
-    <div></div>
+<!-- Paper grain -->
+<div class="grain" aria-hidden="true"></div>
+
+<!-- The spine: scroll progress as a graph traversal -->
+<div class="spine" aria-hidden="true">
+  <div class="spine-track"></div>
+  <div class="spine-fill"></div>
 </div>
 
-<!-- Mobile Navigation Menu -->
-<ul class="nav-links mobile-nav">
-    <li><a href="#research-interests">Research Interests</a></li>
-    <li><a href="#publications">Publications</a></li>
-    <li><a href="#research-experience">Research</a></li>
-    <li><a href="#work-experience">Work</a></li>
-    <li><a href="#teaching">Teaching</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#awards">Awards</a></li>
-    <li><a href="#cv">CV</a></li>
-    <li><a href="/music">Music Blog</a></li>
-</ul>
-
-<!-- Banner Header Section -->
-<section id="header">
-
-    <!-- Navigation Bar (Desktop) -->
-    <nav>
-        <ul class="nav-links desktop-nav">
-            <li><a href="#research-interests">Research Interests</a></li>
-            <li><a href="#publications">Publications</a></li>
-            <li><a href="#research-experience">Research</a></li>
-            <li><a href="#work-experience">Work</a></li>
-            <li><a href="#teaching">Teaching</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#awards">Awards</a></li>
-            <li><a href="#cv">CV</a></li>
-            <li><a href="/music">Music Blog</a></li>
-        </ul>
+<!-- ═══════════════ RUNNING HEAD ═══════════════ -->
+<header class="running-head">
+  <div class="running-head-inner">
+    <span class="rh-left">CAKIROGLU,&nbsp;M.&nbsp;O.</span>
+    <nav class="rh-nav" aria-label="Sections">
+      <a href="#abstract">ABSTRACT</a>
+      <a href="#publications">PUBLICATIONS</a>
+      <a href="#figures">FIGURES</a>
+      <a href="#teaching">TEACHING</a>
+      <a href="#appendix">APPENDIX</a>
     </nav>
+    <span class="rh-right">BLOOMINGTON,&nbsp;IN</span>
+  </div>
+  <div class="double-rule" aria-hidden="true"><span></span><span></span></div>
+</header>
 
-    <div class="container">
-        <!-- Avatar image inside the white background container -->
-        <div class="avatar-wrapper">
-            <div class="avatar-container">
-                <img src="mert.gif" alt="Mert Avatar" class="avatar"/>
-            </div>
-            <div id="mertCounter" class="mert-counter is-hidden" aria-live="polite"></div>
-        </div>
+<main>
 
-        <!-- Introduction Title and Subtitle -->
-        <h1>
-            Hi, I'm <span class="animated-name">Mert O Cakiroglu!</span>
-        </h1>
-        <p>I am a Ph.D. student in Computer Science at Indiana University's Luddy School of Informatics, Computing, and
-            Engineering.</p>
+<!-- ═══════════════ TITLE PAGE ═══════════════ -->
+<section class="title-page" id="top">
+  <div class="manuscript">
+    <p class="kicker reveal">SELECTED&nbsp;WORKS&nbsp;·&nbsp;VOL.&nbsp;I&nbsp;·&nbsp;2021–2026</p>
 
-        <!-- Icons for Contacts -->
-        <ul class="icons">
-            <li><a href="https://luddy.indiana.edu/" title="Institutional website"><i class="fas fa-university"></i></a>
-            </li>
-            <li><a href="mailto:meocakir@iu.edu" title="E-Mail"><i class="fas fa-envelope"></i></a></li>
-            <li><a href="https://github.com/Lumpus99" title="GitHub"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/mert-onur-cakiroglu" title="LinkedIn"><i
-                    class="fab fa-linkedin"></i></a></li>
-            <li><a href="MertResume.pdf" download title="Download CV"><i class="fas fa-file-pdf"></i></a></li>
-        </ul>
-    </div>
-</section>
+    <h1 class="article-title">
+      <span class="title-line"><span class="w">Mert</span> <span class="w">Onur</span></span>
+      <span class="title-line"><span class="w">Cakiroglu</span><span class="terminal-period">.</span></span>
+    </h1>
 
-<!-- Research Interests Section -->
-<section id="research-interests">
-    <h2>Research Interests</h2>
-    <div class="entry">
-        <p>
-            My research focuses on machine learning for video understanding and time series forecasting.
-            I am experienced in self-supervised learning, compressed-domain video analysis, and graph-based sequence modeling.
-            I develop advanced models to improve video understanding, particularly in compressed domains and through
-            self-supervised techniques.
-            Additionally, I explore novel methods for representing sequential data using de Bruijn graphs, 
-            including multivariate time series, protein sequences, and other temporal patterns,
-            to enhance model performance in classification and forecasting tasks.
+    <div class="title-grid">
+      <div class="title-text">
+        <p class="abstract-lead reveal"><strong>Abstract:</strong> I teach machines to read the structure hidden in
+          sequences. My research turns video, electricity grids, glucose traces, and proteins into symbolic graphs:
+          de&nbsp;Bruijn graphs, borrowed from genomics, so that neural models can reason over them. I am a
+          doctoral researcher in Computer Science at Indiana University Bloomington, with eleven works spanning
+          <em>Scientific Reports</em>, <em>IEEE Access</em>, <em>Machine Learning: Science and Technology</em>,
+          and an ICML 2025 workshop.</p>
+        <p class="index-terms reveal"><span class="it-label">Index Terms:</span> de Bruijn graphs, video understanding,
+          time-series forecasting, self-supervised learning, protein classification</p>
+        <p class="title-actions reveal">
+          <a class="action-link" href="#publications">READ THE RESEARCH&nbsp;↓</a>
+          <a class="action-ghost" href="MertResume.pdf" download>CURRICULUM&nbsp;VITAE&nbsp;↧</a>
         </p>
+      </div>
+
+      <figure class="fig fig-hero reveal" id="fig1">
+        <svg viewBox="0 20 380 392" role="img" aria-label="A de Bruijn graph with k equal to 2. A highlighted walk traverses eight nodes.">
+          <defs>
+            <marker id="arr-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 9 5 L 0 9" fill="none" stroke="var(--ink-hairline-solid)" stroke-width="1.4"/>
+            </marker>
+            <marker id="arr-rubric" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 9 5 L 0 9" fill="none" stroke="var(--rubric)" stroke-width="1.6"/>
+            </marker>
+          </defs>
+
+          <!-- ink component: ME→ER→RT→TO→ON→NU→UR plus decoy joins -->
+          <g class="g-ink" fill="none" stroke="var(--ink-hairline-solid)" stroke-width="1">
+            <path d="M 52 210 Q 68 248 96 268" marker-end="url(#arr-ink)"/>      <!-- ME→ER -->
+            <path d="M 112 258 Q 148 222 186 208" marker-end="url(#arr-ink)"/>   <!-- ER→RT -->
+            <path d="M 202 216 Q 240 262 268 300" marker-end="url(#arr-ink)"/>   <!-- RT→TO -->
+            <path d="M 274 316 Q 260 356 234 380" marker-end="url(#arr-ink)"/>   <!-- TO→ON -->
+            <path d="M 218 386 Q 172 396 136 380" marker-end="url(#arr-ink)"/>   <!-- ON→NU -->
+            <path d="M 124 368 Q 96 340 92 312" marker-end="url(#arr-ink)"/>     <!-- NU→UR -->
+            <path d="M 104 296 Q 148 268 184 218" marker-end="url(#arr-ink)"/>   <!-- UR→RT decoy -->
+            <path d="M 112 270 Q 190 236 246 190" marker-end="url(#arr-ink)"/>   <!-- ER→RO decoy -->
+            <path d="M 296 118 Q 260 160 206 202" marker-end="url(#arr-ink)"/>   <!-- IR→RT decoy -->
+          </g>
+
+          <!-- the walk: CA→AK→KI→IR→RO→OG→GL→LU -->
+          <g class="g-walk" fill="none" stroke="var(--rubric)" stroke-width="1.5">
+            <path class="walk-seg" d="M 74 60 Q 116 38 158 48" marker-end="url(#arr-rubric)"/>    <!-- CA→AK -->
+            <path class="walk-seg" d="M 190 56 Q 228 68 252 88" marker-end="url(#arr-rubric)"/>   <!-- AK→KI -->
+            <path class="walk-seg" d="M 276 104 Q 292 108 298 110" marker-end="url(#arr-rubric)"/><!-- KI→IR -->
+            <path class="walk-seg" d="M 306 128 Q 296 158 276 174" marker-end="url(#arr-rubric)"/><!-- IR→RO -->
+            <path class="walk-seg" d="M 246 186 Q 216 194 192 190" marker-end="url(#arr-rubric)"/><!-- RO→OG -->
+            <path class="walk-seg" d="M 162 184 Q 118 176 88 188" marker-end="url(#arr-rubric)"/> <!-- OG→GL -->
+            <path class="walk-seg" d="M 66 202 Q 48 226 52 252" marker-end="url(#arr-rubric)"/>   <!-- GL→LU -->
+          </g>
+
+          <!-- nodes: the walk (vermillion-stroked) -->
+          <g class="g-nodes">
+            <g class="node walk-node"><circle cx="60" cy="64" r="13"/><text x="60" y="64">CA</text></g>
+            <g class="node walk-node"><circle cx="174" cy="50" r="13"/><text x="174" y="50">AK</text></g>
+            <g class="node walk-node"><circle cx="264" cy="96" r="13"/><text x="264" y="96">KI</text></g>
+            <g class="node walk-node"><circle cx="308" cy="114" r="13"/><text x="308" y="114">IR</text></g>
+            <g class="node walk-node"><circle cx="262" cy="182" r="13"/><text x="262" y="182">RO</text></g>
+            <g class="node walk-node"><circle cx="176" cy="188" r="13"/><text x="176" y="188">OG</text></g>
+            <g class="node walk-node"><circle cx="76" cy="192" r="13"/><text x="76" y="192">GL</text></g>
+            <g class="node walk-node"><circle cx="54" cy="266" r="13"/><text x="54" y="266">LU</text></g>
+          </g>
+          <!-- nodes: the surrounding graph (ink) -->
+          <g class="g-nodes">
+            <g class="node ink-node"><circle cx="44" cy="196" r="13"/><text x="44" y="196">ME</text></g>
+            <g class="node ink-node"><circle cx="104" cy="264" r="13"/><text x="104" y="264">ER</text></g>
+            <g class="node ink-node"><circle cx="194" cy="210" r="13"/><text x="194" y="210">RT</text></g>
+            <g class="node ink-node"><circle cx="272" cy="308" r="13"/><text x="272" y="308">TO</text></g>
+            <g class="node ink-node"><circle cx="226" cy="384" r="13"/><text x="226" y="384">ON</text></g>
+            <g class="node ink-node"><circle cx="128" cy="374" r="13"/><text x="128" y="374">NU</text></g>
+            <g class="node ink-node"><circle cx="96" cy="304" r="13"/><text x="96" y="304">UR</text></g>
+          </g>
+        </svg>
+        <figcaption><span class="fig-label">FIG.&nbsp;1.</span> A de Bruijn graph, <em>k</em>&nbsp;=&nbsp;2. The
+          highlighted wal<span class="wonk">k</span> reconstructs a familiar sequence; verification is left as an
+          exercise for the reader.</figcaption>
+      </figure>
     </div>
+
+    <footer class="page-footer reveal">
+      <span class="pf-num">1</span>
+      <a class="pf-continue" href="#abstract">CONTINUE&nbsp;READING&nbsp;↓</a>
+    </footer>
+  </div>
 </section>
 
-<!-- Publications Section -->
-<section id="publications">
-    <h2>Publications</h2>
+<!-- ═══════════════ 01 · ABSTRACT ═══════════════ -->
+<section class="section" id="abstract">
+  <div class="manuscript">
+    <header class="section-head">
+      <span class="section-no" data-spine-node="01">01</span>
+      <h2 class="section-title">Abstract</h2>
+      <span class="section-sub">THE&nbsp;AUTHOR,&nbsp;IN&nbsp;BRIEF</span>
+    </header>
 
-    <h3>Conferences and Workshops</h3>
+    <div class="section-grid">
+      <div class="section-body">
+        <p class="reveal">Mert Onur Cakiroglu is a doctoral researcher in Computer Science at Indiana University
+          Bloomington's Luddy School of Informatics, Computing, and Engineering, advised by
+          Prof.&nbsp;Mehmet&nbsp;M.&nbsp;Dalkilic and co-advised by Dr.&nbsp;Hasan&nbsp;Kurban. His work asks a single
+          question in many domains: <em>what does a neural model gain when a continuous signal is first re-written as
+          a symbolic graph?</em></p>
+        <p class="reveal">The answer, so far, spans an unusual range for an early-career researcher: forecasting
+          electricity demand across power grids, anticipating hypoglycemic events in children with Type&nbsp;1
+          diabetes (published in <em>Scientific Reports</em> with clinicians at Sidra Medicine), classifying
+          proteins from sequence alone, and, most recently, judging whether AI-generated video moves the way the real
+          world does. Before the doctorate he was a research associate at Texas&nbsp;A&amp;M University at Qatar,
+          building self-supervised and federated learning systems for video in the compressed domain, and a full-stack
+          engineer shipping fault-management systems for national telecom infrastructure.</p>
+        <p class="reveal">He is first author on ten of the eleven works catalogued below.</p>
+      </div>
 
-    <div class="entry-publication">
-        <div class="year">2025</div>
-        <div class="publication-details">
-            <strong>Mert Onur Cakiroglu</strong>, Idil Bilge Altun, Mehmet Dalkilic, Elham Buxton, Hasan Kurban.
-            "Multivariate de Bruijn Graphs: A Symbolic Graph Framework for Time Series Forecasting."
-            <em>International Conference on Machine Learning (ICML 2025)</em>, 1st Workshop on Foundation Models for Structured Data (FMSD).
-            <a href="https://arxiv.org/abs/2505.22768" target="_blank" rel="noopener noreferrer"
-               class="external-link">(arXiv)</a>
+      <aside class="marginalia">
+        <div class="correspondence reveal">
+          <p class="corr-label">CORRESPONDENCE</p>
+          <a class="corr-mail" href="mailto:meocakir@iu.edu">meocakir@iu.edu</a>
+          <ul class="corr-links">
+            <li><a href="https://scholar.google.com/citations?user=nwuqlpEAAAAJ" target="_blank" rel="noopener">GOOGLE&nbsp;SCHOLAR&nbsp;↗</a></li>
+            <li><a href="https://orcid.org/0009-0001-0798-1361" target="_blank" rel="noopener">ORCID&nbsp;↗</a></li>
+            <li><a href="https://dblp.org/pid/389/3487.html" target="_blank" rel="noopener">DBLP&nbsp;↗</a></li>
+            <li><a href="https://github.com/Lumpus99" target="_blank" rel="noopener">GITHUB&nbsp;↗</a></li>
+            <li><a href="https://www.linkedin.com/in/mert-onur-cakiroglu" target="_blank" rel="noopener">LINKEDIN&nbsp;↗</a></li>
+            <li><a href="https://kurbanintelligencelab.com/" target="_blank" rel="noopener">KURBAN&nbsp;INTELLIGENCE&nbsp;LAB&nbsp;↗</a></li>
+          </ul>
         </div>
+      </aside>
     </div>
 
-    <div class="entry-publication">
-        <div class="year">2025</div>
-        <div class="publication-details">
-            <strong>Mert Onur Cakiroglu</strong>, Idil Bilge Altun, Shahriar Rahman Fahim, Hasan Kurban, Mehmet M. Dalkilic, Rachad Atat.
-            "De Bruijn Graph-Enhanced Time Series Models for Electricity Load Forecasting."
-            <em>International Symposium on Signals, Circuits and Systems (ISSCS 2025)</em>, Iasi, Romania, pp. 1-4.
-            <a href="https://doi.org/10.1109/ISSCS66034.2025.11105646" target="_blank" rel="noopener noreferrer"
-               class="external-link">(DOI)</a>
-        </div>
-    </div>
-
-    <div class="entry-publication">
-        <div class="year">2024</div>
-        <div class="publication-details">
-            <strong>Mert Onur Cakiroglu</strong>, Hasan Kurban, Elham Khorasani Buxton, Mehmet Dalkilic.
-            "A Novel Discrete Time Series Representation with De Bruijn Graphs for Enhanced Forecasting Using TimesNet
-            (Extended Abstract)." <em>IEEE 11th International Conference on Data Science and Advanced Analytics
-            (DSAA 2024)</em>, San Diego, CA, USA, pp. 1-3.
-            <a href="https://doi.org/10.1109/DSAA61799.2024.10722826" target="_blank" rel="noopener noreferrer"
-               class="external-link">(DOI)</a>
-        </div>
-    </div>
-
-    <h3>Peer-Reviewed Journals</h3>
-
-    <div class="entry-publication">
-        <div class="year">2025</div>
-        <div class="publication-details">
-            <strong>Mert Onur Cakiroglu</strong>, Idil Bilge Altun, Shahriar Rahman Fahim, Hasan Kurban, Mehmet Dalkilic, 
-            Rachad Atat, Abdulrahman Takiddin, Erchin Serpedin.
-            "An Extended Frequency-Improved Legendre Memory Model for Enhanced Long-Term Electricity Load Forecasting."
-            <em>IEEE Open Access Journal of Power and Energy</em>, 12, 691-701.
-            <strong>(Impact Factor: 3.6)</strong>
-            <a href="https://doi.org/10.1109/OAJPE.2025.3615513" target="_blank" rel="noopener noreferrer"
-               class="external-link">(DOI)</a>
-        </div>
-    </div>
-
-    <div class="entry-publication">
-        <div class="year">2025</div>
-        <div class="publication-details">
-            <strong>Mert Onur Cakiroglu</strong>, Hasan Kurban, Elham Buxton, Mehmet Dalkilic. 
-            "A Novel Discrete Time Series Representation with De Bruijn Graphs for Enhanced Forecasting Using TimesNet." 
-            <em>IEEE Access</em>, 13, 123182-123198.
-            <strong>(Impact Factor: 3.2)</strong>
-            <a href="https://doi.org/10.1109/ACCESS.2025.3588507" target="_blank" rel="noopener noreferrer"
-               class="external-link">(DOI)</a>
-        </div>
-    </div>
-
-    <div class="entry-publication">
-        <div class="year">2024</div>
-        <div class="publication-details">
-            <strong>Mert Onur Cakiroglu</strong>, Hasan Kurban, Parichit Sharma, M. Oguzhan Kulekci, Elham Khorasani
-            Buxton, Maryam Raeeszadeh-Sarmazdeh, Mehmet Dalkilic. "An Extended de Bruijn Graph for Feature Engineering
-            Over Biological Sequential Data." <em>Machine Learning: Science and Technology</em>, 5(3), Article 035020. 
-            <strong>(Impact Factor: 6.8)</strong>
-            <a href="https://doi.org/10.1088/2632-2153/ad5fde" target="_blank" rel="noopener noreferrer" 
-                class="external-link">(DOI)</a>
-        </div>
-    </div>
-
-    <div class="entry-publication">
-        <div class="year">2024</div>
-        <div class="publication-details">
-            <strong>Mert Onur Cakiroglu</strong>, Hasan Kurban, Lilia Aljihmani, Khalid Qaraqe, Goran Petrovski, 
-            Mehmet M. Dalkilic. "A Reinforcement Learning Approach to Effective Forecasting of Pediatric Hypoglycemia 
-            in Diabetes I Patients Using an Extended de Bruijn Graph." <em>Nature – Scientific Reports</em>, 14, Article 31251. 
-            <strong>(Impact Factor: 3.8)</strong>
-            <a href="https://doi.org/10.1038/s41598-024-82649-4" target="_blank" rel="noopener noreferrer"
-               class="external-link">(DOI)</a>
-        </div>
-    </div>
-
-    <h3>Under Review</h3>
-
-    <div class="entry-publication">
-        <div class="year">2025</div>
-        <div class="publication-details">
-            <strong>Mert Onur Cakiroglu</strong>, Idil Bilge Altun, Zhihe Lu, Mehmet Dalkilic, Hasan Kurban. 
-            "Temporal Realism Evaluation of Generated Videos Using Compressed-Domain Motion Vectors." 
-            Under review at <em>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR 2026)</em>.
-            <a href="https://doi.org/10.48550/arXiv.2511.13897" target="_blank" rel="noopener noreferrer"
-               class="external-link">(arXiv)</a>
-        </div>
-    </div>
-
+    <footer class="page-footer"><span class="pf-num">2</span></footer>
+  </div>
 </section>
 
-<!-- Research Experience Section -->
-<section id="research-experience">
-    <h2>Research Experience</h2>
+<!-- ═══════════════ 02 · PUBLICATIONS ═══════════════ -->
+<section class="section" id="publications">
+  <div class="manuscript">
+    <header class="section-head">
+      <span class="section-no" data-spine-node="02">02</span>
+      <h2 class="section-title">Publications</h2>
+      <span class="section-sub">REFERENCES,&nbsp;ANNOTATED</span>
+    </header>
 
-    <div class="entry">
-        <div class="date">May 2024 – Jul. 2024</div>
-        <div class="details">
-            <strong>Research Associate</strong> – Texas A&M University at Qatar
-            <ul>
-                <li>Advisor: Dr. Hasan Kurban</li>
-                <li>Developed a self-supervised learning framework for video data, enabling models to learn meaningful
-                    representations without labeled data.
-                </li>
-                <li>Implemented federated video learning in the compressed domain, optimizing performance while
-                    preserving privacy.
-                </li>
-            </ul>
-        </div>
+    <!-- Featured plates: the two 2026 works -->
+    <div class="featured-pair reveal">
+      <span class="stamp" aria-label="New in 2026">NEW&nbsp;·&nbsp;2026</span>
+
+      <article class="plate" data-kind="preprint">
+        <p class="featured-kicker">PLATE&nbsp;I&nbsp;·&nbsp;TIME&nbsp;SERIES</p>
+        <h3 class="featured-title"><a href="https://arxiv.org/abs/2607.13006" target="_blank" rel="noopener">The
+          Spectrum Is Not Enough: When Context Helps Time-Series Forecasting</a></h3>
+        <p class="entry-authors"><strong>M.&nbsp;O.&nbsp;Cakiroglu</strong>, M.&nbsp;Dalkilic, H.&nbsp;Kurban</p>
+        <p class="featured-gloss">A frequency spectrum tells a forecaster what repeats, and nothing about why. This
+          work maps out when contextual information genuinely improves a time-series model, and when the spectrum
+          alone was always going to be enough.</p>
+        <p class="entry-links">
+          <a href="https://arxiv.org/abs/2607.13006" target="_blank" rel="noopener">ARXIV&nbsp;↗</a>
+          <a href="https://github.com/KurbanIntelligenceLab/SINE" target="_blank" rel="noopener">CODE&nbsp;↗</a>
+          <button class="bibtex-btn" type="button" data-bib="spectrum2026">BIBTEX</button>
+        </p>
+        <figure class="fig plate-fig">
+          <svg viewBox="0 0 300 130" role="img" aria-label="A frequency spectrum drawn as vertical stems; a highlighted context window covers what the stems miss.">
+            <!-- baseline -->
+            <line x1="16" y1="104" x2="284" y2="104" stroke="var(--ink)" stroke-width="1"/>
+            <!-- spectrum stems (ink) -->
+            <g stroke="var(--ink)" stroke-width="1.4">
+              <line x1="34"  y1="104" x2="34"  y2="46"/>
+              <line x1="56"  y1="104" x2="56"  y2="72"/>
+              <line x1="78"  y1="104" x2="78"  y2="30"/>
+              <line x1="100" y1="104" x2="100" y2="84"/>
+              <line x1="122" y1="104" x2="122" y2="58"/>
+              <line x1="144" y1="104" x2="144" y2="92"/>
+              <line x1="166" y1="104" x2="166" y2="76"/>
+              <line x1="188" y1="104" x2="188" y2="96"/>
+            </g>
+            <g fill="var(--ink)">
+              <circle cx="34" cy="46" r="2.4"/><circle cx="56" cy="72" r="2.4"/><circle cx="78" cy="30" r="2.4"/>
+              <circle cx="100" cy="84" r="2.4"/><circle cx="122" cy="58" r="2.4"/><circle cx="144" cy="92" r="2.4"/>
+              <circle cx="166" cy="76" r="2.4"/><circle cx="188" cy="96" r="2.4"/>
+            </g>
+            <!-- the context the spectrum cannot see (rubric) -->
+            <g stroke="var(--rubric)" fill="none">
+              <path d="M 208 88 C 224 84, 232 62, 246 58 S 270 44, 282 34" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <path d="M 206 112 L 206 118 L 284 118 L 284 112" stroke-width="1"/>
+            </g>
+            <text x="245" y="128" text-anchor="middle" class="fig-t" fill="var(--rubric-small)">CONTEXT</text>
+            <text x="110" y="128" text-anchor="middle" class="fig-t">SPECTRUM</text>
+          </svg>
+          <figcaption><span class="fig-label">FIG.&nbsp;2.</span> The spectrum, and what it cannot see.</figcaption>
+        </figure>
+      </article>
+
+      <article class="plate" data-kind="preprint">
+        <p class="featured-kicker">PLATE&nbsp;II&nbsp;·&nbsp;VIDEO</p>
+        <h3 class="featured-title"><a href="https://arxiv.org/abs/2606.31004" target="_blank" rel="noopener">Auditing
+          Generalization in AI-Generated Video Detection: The VidAudit Toolkit</a></h3>
+        <p class="entry-authors"><strong>M.&nbsp;O.&nbsp;Cakiroglu</strong>, Z.&nbsp;Lu, M.&nbsp;M.&nbsp;Dalkilic,
+          H.&nbsp;Kurban</p>
+        <p class="featured-gloss">Do deepfake detectors generalize, or merely memorize their training set? A
+          six-control audit protocol that tells the difference, released as an open toolkit, leaderboard, and
+          model zoo.</p>
+        <p class="entry-links">
+          <a href="https://arxiv.org/abs/2606.31004" target="_blank" rel="noopener">ARXIV&nbsp;↗</a>
+          <a href="https://github.com/KurbanIntelligenceLab/vidaudit" target="_blank" rel="noopener">CODE&nbsp;↗</a>
+          <button class="bibtex-btn" type="button" data-bib="vidaudit2026">BIBTEX</button>
+        </p>
+        <figure class="fig plate-fig">
+          <svg viewBox="0 0 300 130" role="img" aria-label="An audit grid: three detectors against six controls, marked pass or fail; one control column is highlighted.">
+            <!-- grid: 6 controls x 3 detectors -->
+            <g stroke="var(--ink-hairline-solid)" stroke-width="1" fill="none">
+              <rect x="52" y="18" width="216" height="84"/>
+              <path d="M 52 46 H 268 M 52 74 H 268"/>
+              <path d="M 88 18 V 102 M 124 18 V 102 M 160 18 V 102 M 196 18 V 102 M 232 18 V 102"/>
+            </g>
+            <!-- control labels -->
+            <g class="fig-t" text-anchor="middle">
+              <text x="70"  y="114">C1</text><text x="106" y="114">C2</text><text x="142" y="114">C3</text>
+              <text x="178" y="114">C4</text><text x="214" y="114">C5</text>
+            </g>
+            <text x="250" y="114" text-anchor="middle" class="fig-t" fill="var(--rubric-small)">C6</text>
+            <!-- detector labels -->
+            <g class="fig-t" text-anchor="end">
+              <text x="44" y="36">D1</text><text x="44" y="64">D2</text><text x="44" y="92">D3</text>
+            </g>
+            <!-- marks: filled = pass, open = fail; the highlighted control exposes failure -->
+            <g fill="var(--ink)">
+              <circle cx="70" cy="32" r="3.4"/><circle cx="106" cy="32" r="3.4"/><circle cx="142" cy="32" r="3.4"/>
+              <circle cx="178" cy="32" r="3.4"/><circle cx="214" cy="32" r="3.4"/>
+              <circle cx="70" cy="60" r="3.4"/><circle cx="106" cy="60" r="3.4"/>
+              <circle cx="178" cy="60" r="3.4"/>
+              <circle cx="70" cy="88" r="3.4"/><circle cx="142" cy="88" r="3.4"/><circle cx="214" cy="88" r="3.4"/>
+            </g>
+            <g fill="none" stroke="var(--ink-hairline-solid)" stroke-width="1.2">
+              <circle cx="142" cy="60" r="3.4"/><circle cx="214" cy="60" r="3.4"/>
+              <circle cx="106" cy="88" r="3.4"/><circle cx="178" cy="88" r="3.4"/>
+            </g>
+            <g fill="none" stroke="var(--rubric)" stroke-width="1.4">
+              <circle cx="250" cy="32" r="3.4"/><circle cx="250" cy="60" r="3.4"/><circle cx="250" cy="88" r="3.4"/>
+            </g>
+          </svg>
+          <figcaption><span class="fig-label">FIG.&nbsp;3.</span> Six controls for one question: does the detector
+            generalize?</figcaption>
+        </figure>
+      </article>
     </div>
 
-    <div class="entry">
-        <div class="date">Aug. 2023 – Ongoing</div>
-        <div class="details">
-            <strong>Student Researcher</strong> – Kurban Intelligence Labs
-            <a href="https://kurbanintelligencelab.com/" target="_blank" rel="noopener noreferrer"
-               class="external-link">
-                (Visit Lab Website)
-            </a>
-            <ul>
-                <li>Advisor: Dr. Hasan Kurban</li>
-                <li>Conducted research and authored academic papers on time series forecasting, Type 1 Diabetes hypoglycemia detection, and protein classification.
-                </li>
-                <li>Currently conducting research on video learning, self-supervised learning, and representation learning using de Bruijn graphs.
-                </li>
-            </ul>
-        </div>
+    <!-- Filter rail -->
+    <div class="filter-rail reveal" role="toolbar" aria-label="Filter publications">
+      <button class="filter-btn is-active" data-filter="all" type="button">[&nbsp;ALL&nbsp;<span class="f-count">11</span>&nbsp;]</button>
+      <button class="filter-btn" data-filter="journal" type="button">[&nbsp;JOURNALS&nbsp;<span class="f-count">4</span>&nbsp;]</button>
+      <button class="filter-btn" data-filter="conference" type="button">[&nbsp;CONFERENCES&nbsp;<span class="f-count">3</span>&nbsp;]</button>
+      <button class="filter-btn" data-filter="preprint" type="button">[&nbsp;PREPRINTS&nbsp;<span class="f-count">4</span>&nbsp;]</button>
     </div>
+
+    <ol class="refs" id="refs-list">
+
+      <li class="ref reveal" data-kind="preprint">
+        <span class="ref-no">[1]</span>
+        <div class="ref-body">
+          <h3 class="ref-title"><a href="https://arxiv.org/abs/2607.13006" target="_blank" rel="noopener">The
+            Spectrum Is Not Enough: When Context Helps Time-Series Forecasting</a></h3>
+          <p class="entry-authors"><strong>M.&nbsp;O.&nbsp;Cakiroglu</strong>, M.&nbsp;Dalkilic, H.&nbsp;Kurban</p>
+          <p class="ref-venue"><em>arXiv:2607.13006</em>, 2026 <span class="tag">[PREPRINT]</span></p>
+          <p class="entry-links">
+            <a href="https://arxiv.org/abs/2607.13006" target="_blank" rel="noopener">ARXIV&nbsp;↗</a>
+            <a href="https://github.com/KurbanIntelligenceLab/SINE" target="_blank" rel="noopener">CODE&nbsp;↗</a>
+            <button class="bibtex-btn" type="button" data-bib="spectrum2026">BIBTEX</button>
+          </p>
+        </div>
+        <span class="ref-gloss">When does a forecaster need more than frequencies? A study of what context actually
+          buys a time-series model.</span>
+      </li>
+
+      <li class="ref reveal" data-kind="preprint">
+        <span class="ref-no">[2]</span>
+        <div class="ref-body">
+          <h3 class="ref-title"><a href="https://arxiv.org/abs/2606.31004" target="_blank" rel="noopener">Auditing
+            Generalization in AI-Generated Video Detection: A Six-Control Protocol and the VidAudit Toolkit</a></h3>
+          <p class="entry-authors"><strong>M.&nbsp;O.&nbsp;Cakiroglu</strong>, Z.&nbsp;Lu, M.&nbsp;M.&nbsp;Dalkilic,
+            H.&nbsp;Kurban</p>
+          <p class="ref-venue"><em>arXiv:2606.31004</em>, 2026 <span class="tag">[PREPRINT]</span></p>
+          <p class="entry-links">
+            <a href="https://arxiv.org/abs/2606.31004" target="_blank" rel="noopener">ARXIV&nbsp;↗</a>
+            <a href="https://github.com/KurbanIntelligenceLab/vidaudit" target="_blank" rel="noopener">CODE&nbsp;↗</a>
+            <button class="bibtex-btn" type="button" data-bib="vidaudit2026">BIBTEX</button>
+          </p>
+        </div>
+        <span class="ref-gloss">Do deepfake detectors generalize, or memorize? Six controls that tell the
+          difference.</span>
+      </li>
+
+      <li class="ref reveal" data-kind="preprint">
+        <span class="ref-no">[3]</span>
+        <div class="ref-body">
+          <h3 class="ref-title"><a href="https://arxiv.org/abs/2602.16086" target="_blank" rel="noopener">LGQ:
+            Learnable Geometric Quantization for Image Tokenization</a></h3>
+          <p class="entry-authors">I.&nbsp;B.&nbsp;Altun, <strong>M.&nbsp;O.&nbsp;Cakiroglu</strong>,
+            E.&nbsp;Buxton, M.&nbsp;Dalkilic, H.&nbsp;Kurban</p>
+          <p class="ref-venue"><em>arXiv:2602.16086</em>, 2026 <span class="tag">[PREPRINT]</span></p>
+          <p class="entry-links">
+            <a href="https://arxiv.org/abs/2602.16086" target="_blank" rel="noopener">ARXIV&nbsp;↗</a>
+            <a href="https://github.com/KurbanIntelligenceLab/LGQ" target="_blank" rel="noopener">CODE&nbsp;↗</a>
+            <button class="bibtex-btn" type="button" data-bib="lgq2026">BIBTEX</button>
+          </p>
+        </div>
+        <span class="ref-gloss">Image tokenizers whose codebooks learn their own geometry.</span>
+      </li>
+
+      <li class="ref reveal" data-kind="preprint">
+        <span class="ref-no">[4]</span>
+        <div class="ref-body">
+          <h3 class="ref-title"><a href="https://arxiv.org/abs/2511.13897" target="_blank" rel="noopener">Temporal
+            Realism Evaluation of Generated Videos Using Compressed-Domain Motion Vectors</a></h3>
+          <p class="entry-authors"><strong>M.&nbsp;O.&nbsp;Cakiroglu</strong>, I.&nbsp;B.&nbsp;Altun, Z.&nbsp;Lu,
+            M.&nbsp;Dalkilic, H.&nbsp;Kurban</p>
+          <p class="ref-venue"><em>arXiv:2511.13897</em>, 2025 <span class="tag">[PREPRINT&nbsp;·&nbsp;IN&nbsp;SUBMISSION]</span></p>
+          <p class="entry-links">
+            <a href="https://arxiv.org/abs/2511.13897" target="_blank" rel="noopener">ARXIV&nbsp;↗</a>
+            <a href="https://github.com/KurbanIntelligenceLab/Motion-Vector-Learning" target="_blank" rel="noopener">CODE&nbsp;↗</a>
+            <button class="bibtex-btn" type="button" data-bib="temporal2025">BIBTEX</button>
+          </p>
+        </div>
+        <span class="ref-gloss">AI video looks right frame by frame. But does it move right? The motion vectors
+          already know.</span>
+      </li>
+
+      <li class="ref reveal" data-kind="journal">
+        <span class="ref-no">[5]</span>
+        <div class="ref-body">
+          <h3 class="ref-title"><a href="https://doi.org/10.1109/OAJPE.2025.3615513" target="_blank" rel="noopener">An
+            Extended Frequency-Improved Legendre Memory Model for Enhanced Long-Term Electricity Load
+            Forecasting</a></h3>
+          <p class="entry-authors"><strong>M.&nbsp;O.&nbsp;Cakiroglu</strong>, I.&nbsp;B.&nbsp;Altun,
+            S.&nbsp;R.&nbsp;Fahim, H.&nbsp;Kurban, M.&nbsp;Dalkilic, R.&nbsp;Atat, A.&nbsp;Takiddin,
+            E.&nbsp;Serpedin</p>
+          <p class="ref-venue"><em>IEEE Open Access Journal of Power and Energy</em>, 12, 691–701, 2025
+            <span class="tag">[JOURNAL]</span></p>
+          <p class="entry-links">
+            <a href="https://doi.org/10.1109/OAJPE.2025.3615513" target="_blank" rel="noopener">DOI&nbsp;↗</a>
+            <button class="bibtex-btn" type="button" data-bib="legendre2025">BIBTEX</button>
+          </p>
+        </div>
+        <span class="ref-gloss">Long-horizon grid forecasting with a memory that thinks in Legendre
+          polynomials.</span>
+      </li>
+
+      <li class="ref reveal is-flagship" data-kind="conference">
+        <span class="ref-no">[6]</span>
+        <div class="ref-body">
+          <h3 class="ref-title"><a href="https://arxiv.org/abs/2505.22768" target="_blank" rel="noopener">Multivariate
+            de Bruijn Graphs: A Symbolic Graph Framework for Time Series Forecasting</a></h3>
+          <p class="entry-authors"><strong>M.&nbsp;O.&nbsp;Cakiroglu</strong>, I.&nbsp;B.&nbsp;Altun,
+            M.&nbsp;Dalkilic, E.&nbsp;Buxton, H.&nbsp;Kurban</p>
+          <p class="ref-venue"><em>ICML 2025</em>, 1st Workshop on Foundation Models for Structured Data, Vancouver,
+            2025 <span class="tag tag-rubric">[ICML&nbsp;WORKSHOP]</span></p>
+          <p class="entry-links">
+            <a href="https://arxiv.org/abs/2505.22768" target="_blank" rel="noopener">ARXIV&nbsp;↗</a>
+            <a href="https://github.com/KurbanIntelligenceLab/MultdBG-Time-Series-Library" target="_blank" rel="noopener">CODE&nbsp;↗</a>
+            <button class="bibtex-btn" type="button" data-bib="dragon2025">BIBTEX</button>
+          </p>
+        </div>
+        <span class="ref-gloss">DRAGON: forecasting that reads a time series the way genomics reads a genome.</span>
+      </li>
+
+      <li class="ref reveal" data-kind="journal">
+        <span class="ref-no">[7]</span>
+        <div class="ref-body">
+          <h3 class="ref-title"><a href="https://doi.org/10.1109/ACCESS.2025.3588507" target="_blank" rel="noopener">A
+            Novel Discrete Time Series Representation with De Bruijn Graphs for Enhanced Forecasting Using
+            TimesNet</a></h3>
+          <p class="entry-authors"><strong>M.&nbsp;O.&nbsp;Cakiroglu</strong>, H.&nbsp;Kurban, E.&nbsp;Buxton,
+            M.&nbsp;Dalkilic</p>
+          <p class="ref-venue"><em>IEEE Access</em>, 13, 123182–123198, 2025 <span class="tag">[JOURNAL]</span></p>
+          <p class="entry-links">
+            <a href="https://doi.org/10.1109/ACCESS.2025.3588507" target="_blank" rel="noopener">DOI&nbsp;↗</a>
+            <a href="https://github.com/KurbanIntelligenceLab/dBGTime-Series-Library" target="_blank" rel="noopener">CODE&nbsp;↗</a>
+            <button class="bibtex-btn" type="button" data-bib="timesnet2025">BIBTEX</button>
+          </p>
+        </div>
+        <span class="ref-gloss">Discretize, graph, forecast: teaching TimesNet to read symbols.</span>
+      </li>
+
+      <li class="ref reveal" data-kind="conference">
+        <span class="ref-no">[8]</span>
+        <div class="ref-body">
+          <h3 class="ref-title"><a href="https://doi.org/10.1109/ISSCS66034.2025.11105646" target="_blank" rel="noopener">De
+            Bruijn Graph-Enhanced Time Series Models for Electricity Load Forecasting</a></h3>
+          <p class="entry-authors"><strong>M.&nbsp;O.&nbsp;Cakiroglu</strong>, I.&nbsp;B.&nbsp;Altun,
+            S.&nbsp;R.&nbsp;Fahim, H.&nbsp;Kurban, M.&nbsp;M.&nbsp;Dalkilic, R.&nbsp;Atat</p>
+          <p class="ref-venue"><em>International Symposium on Signals, Circuits and Systems (ISSCS)</em>, Iasi,
+            Romania, pp. 1–4, 2025 <span class="tag">[CONFERENCE]</span></p>
+          <p class="entry-links">
+            <a href="https://doi.org/10.1109/ISSCS66034.2025.11105646" target="_blank" rel="noopener">DOI&nbsp;↗</a>
+            <a href="https://github.com/KurbanIntelligenceLab/dBG-Power-Grid-Timesnet" target="_blank" rel="noopener">CODE&nbsp;↗</a>
+            <button class="bibtex-btn" type="button" data-bib="isscs2025">BIBTEX</button>
+          </p>
+        </div>
+        <span class="ref-gloss">The power grid is a sequence too.</span>
+      </li>
+
+      <li class="ref reveal is-flagship" data-kind="journal">
+        <span class="ref-no">[9]</span>
+        <div class="ref-body">
+          <h3 class="ref-title"><a href="https://doi.org/10.1038/s41598-024-82649-4" target="_blank" rel="noopener">A
+            Reinforcement Learning Approach to Effective Forecasting of Pediatric Hypoglycemia in Diabetes I Patients
+            Using an Extended de Bruijn Graph</a></h3>
+          <p class="entry-authors"><strong>M.&nbsp;O.&nbsp;Cakiroglu</strong>, H.&nbsp;Kurban, L.&nbsp;Aljihmani,
+            K.&nbsp;Qaraqe, G.&nbsp;Petrovski, M.&nbsp;M.&nbsp;Dalkilic</p>
+          <p class="ref-venue"><em>Scientific Reports</em>, 14, 31251, 2024
+            <span class="tag tag-rubric">[NATURE&nbsp;PORTFOLIO]</span>
+            <span class="tag">[CLINICAL&nbsp;COLLABORATION]</span></p>
+          <p class="entry-links">
+            <a href="https://doi.org/10.1038/s41598-024-82649-4" target="_blank" rel="noopener">DOI&nbsp;↗</a>
+            <a href="https://github.com/KurbanIntelligenceLab/dBG-Hypoglycemia-Forecast" target="_blank" rel="noopener">CODE&nbsp;↗</a>
+            <button class="bibtex-btn" type="button" data-bib="hypo2024">BIBTEX</button>
+          </p>
+        </div>
+        <span class="ref-gloss">Can a graph of three-letter words see a hypoglycemic event coming? With the right
+          rewards, yes.</span>
+      </li>
+
+      <li class="ref reveal is-flagship" data-kind="journal">
+        <span class="ref-no">[10]</span>
+        <div class="ref-body">
+          <h3 class="ref-title"><a href="https://doi.org/10.1088/2632-2153/ad5fde" target="_blank" rel="noopener">An
+            Extended de Bruijn Graph for Feature Engineering Over Biological Sequential Data</a></h3>
+          <p class="entry-authors"><strong>M.&nbsp;O.&nbsp;Cakiroglu</strong>, H.&nbsp;Kurban, P.&nbsp;Sharma,
+            M.&nbsp;O.&nbsp;Kulekci, E.&nbsp;K.&nbsp;Buxton, M.&nbsp;Raeeszadeh-Sarmazdeh,
+            M.&nbsp;M.&nbsp;Dalkilic</p>
+          <p class="ref-venue"><em>Machine Learning: Science and Technology</em>, 5(3), 035020, 2024
+            <span class="tag tag-rubric">[IF&nbsp;6.8]</span> <span class="tag">[OPEN&nbsp;ACCESS]</span></p>
+          <p class="entry-links">
+            <a href="https://doi.org/10.1088/2632-2153/ad5fde" target="_blank" rel="noopener">DOI&nbsp;↗</a>
+            <a href="https://github.com/parichit/DebruijnGraph_Classification" target="_blank" rel="noopener">CODE&nbsp;↗</a>
+            <button class="bibtex-btn" type="button" data-bib="mlst2024">BIBTEX</button>
+          </p>
+        </div>
+        <span class="ref-gloss">Proteins are sentences; k-mers are the words; the graph is the grammar.</span>
+      </li>
+
+      <li class="ref reveal" data-kind="conference">
+        <span class="ref-no">[11]</span>
+        <div class="ref-body">
+          <h3 class="ref-title"><a href="https://doi.org/10.1109/DSAA61799.2024.10722826" target="_blank" rel="noopener">A
+            Novel Discrete Time Series Representation with De Bruijn Graphs for Enhanced Forecasting Using TimesNet
+            (Extended Abstract)</a></h3>
+          <p class="entry-authors"><strong>M.&nbsp;O.&nbsp;Cakiroglu</strong>, H.&nbsp;Kurban,
+            E.&nbsp;K.&nbsp;Buxton, M.&nbsp;Dalkilic</p>
+          <p class="ref-venue"><em>IEEE International Conference on Data Science and Advanced Analytics (DSAA)</em>,
+            San Diego, pp. 1–3, 2024 <span class="tag">[EXTENDED&nbsp;ABSTRACT]</span></p>
+          <p class="entry-links">
+            <a href="https://doi.org/10.1109/DSAA61799.2024.10722826" target="_blank" rel="noopener">DOI&nbsp;↗</a>
+            <button class="bibtex-btn" type="button" data-bib="dsaa2024">BIBTEX</button>
+          </p>
+        </div>
+        <span class="ref-gloss">The three-page overture to the IEEE Access paper.</span>
+      </li>
+
+    </ol>
+
+    <footer class="page-footer"><span class="pf-num">3</span></footer>
+  </div>
 </section>
 
-<!-- Work Experience Section -->
-<section id="work-experience">
-    <h2>Work Experience</h2>
+<!-- ═══════════════ 03 · FIGURES ═══════════════ -->
+<section class="section" id="figures">
+  <div class="manuscript">
+    <header class="section-head">
+      <span class="section-no" data-spine-node="03">03</span>
+      <h2 class="section-title">Figures</h2>
+      <span class="section-sub">THE&nbsp;RESEARCH&nbsp;PROGRAM</span>
+    </header>
 
-    <div class="entry">
-        <div class="date">Jul. 2021 – Apr. 2023</div>
-        <div class="details">
-            <strong>Full-Stack Software Developer</strong> – Innova IT Solutions
-            <a href="https://www.innova.com.tr/en/centralized-fault-management-system-mars" target="_blank"
-               rel="noopener noreferrer"
-               class="external-link">
-                (Visit Project Website)
-            </a>
-            <ul>
-                <li>Contributed to the development of the "Centralized Fault Management System (MARS)," designed to
-                    provide end-to-end fault detection, diagnosis, and resolution for telecommunication networks and IT
-                    infrastructures.
-                </li>
-                <li>Improved legacy codebase and developed new functionalities based on functional
-                    specifications and business requirements.
-                </li>
-                <li>Gained experience working in an agile development environment.</li>
-                <li>Developed microservices using Spring Boot, interacting with PL/SQL and MongoDB databases in a
-                    microservice architecture.
-                </li>
-                <li>Worked on front-to-backend interactions using React.js and Vaadin frameworks, utilizing RESTful
-                    services for seamless integration.
-                </li>
-            </ul>
-        </div>
+    <figure class="fig fig-pipeline reveal">
+      <svg viewBox="0 0 880 150" role="img" aria-label="Pipeline: a continuous sequence becomes a symbolic graph, the graph becomes features, the features become a forecast.">
+        <defs>
+          <marker id="arr-flow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M 0 1 L 9 5 L 0 9" fill="none" stroke="var(--ink-muted)" stroke-width="1.2"/>
+          </marker>
+        </defs>
+        <!-- 1: sequence -->
+        <g>
+          <path d="M 30 84 C 50 40, 66 122, 86 76 S 120 44, 138 86 S 168 116, 186 70" fill="none"
+                stroke="var(--ink)" stroke-width="1.5"/>
+          <text class="fig-t" x="108" y="132" text-anchor="middle">SEQUENCE</text>
+        </g>
+        <path d="M 208 78 L 248 78" fill="none" stroke="var(--ink-muted)" stroke-width="1" marker-end="url(#arr-flow)"/>
+        <!-- 2: graph -->
+        <g>
+          <g fill="none" stroke="var(--ink)" stroke-width="1.2">
+            <path d="M 292 58 L 336 44"/><path d="M 336 44 L 372 70"/><path d="M 372 70 L 340 98"/>
+            <path d="M 340 98 L 296 88"/><path d="M 296 88 L 292 58"/><path d="M 336 44 L 340 98"/>
+          </g>
+          <g fill="var(--paper)" stroke="var(--ink)" stroke-width="1.2">
+            <circle cx="292" cy="58" r="5"/><circle cx="336" cy="44" r="5"/><circle cx="372" cy="70" r="5"/>
+            <circle cx="340" cy="98" r="5"/><circle cx="296" cy="88" r="5"/>
+          </g>
+          <circle cx="372" cy="70" r="5" fill="var(--rubric)" stroke="none"/>
+          <text class="fig-t" x="332" y="132" text-anchor="middle">GRAPH</text>
+        </g>
+        <path d="M 400 78 L 440 78" fill="none" stroke="var(--ink-muted)" stroke-width="1" marker-end="url(#arr-flow)"/>
+        <!-- 3: features -->
+        <g>
+          <g stroke="var(--ink)" stroke-width="1" fill="none">
+            <rect x="478" y="42" width="72" height="64"/>
+            <path d="M 478 58 H 550 M 478 74 H 550 M 478 90 H 550 M 496 42 V 106 M 514 42 V 106 M 532 42 V 106"/>
+          </g>
+          <rect x="514" y="58" width="18" height="16" fill="var(--rubric)" opacity="0.85"/>
+          <text class="fig-t" x="514" y="132" text-anchor="middle">FEATURES</text>
+        </g>
+        <path d="M 572 78 L 612 78" fill="none" stroke="var(--ink-muted)" stroke-width="1" marker-end="url(#arr-flow)"/>
+        <!-- 4: forecast -->
+        <g>
+          <path d="M 650 96 C 680 92, 700 68, 724 60" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+          <path d="M 724 60 C 748 54, 776 44, 800 40" fill="none" stroke="var(--rubric)" stroke-width="1.5"
+                stroke-dasharray="4 4"/>
+          <circle cx="724" cy="60" r="3.5" fill="var(--rubric)"/>
+          <text class="fig-t" x="726" y="132" text-anchor="middle">FORECAST</text>
+        </g>
+      </svg>
+      <figcaption><span class="fig-label">FIG.&nbsp;4.</span> The research program in one line: sequences become
+        graphs; graphs become features; features become forecasts.</figcaption>
+    </figure>
+
+    <div class="threads">
+      <article class="thread reveal">
+        <p class="thread-no">I.</p>
+        <h3 class="thread-title">Video, read from the codec</h3>
+        <p class="thread-body">Most video models decode every frame and start from pixels. The compressed stream
+          already contains a physics report: motion vectors, block by block. This thread builds evaluation and
+          detection methods that read it directly, from temporal-realism scoring of generated video to
+          generalization audits for deepfake detectors, with self-supervised and federated learning that never
+          leaves the compressed domain.</p>
+        <p class="thread-refs">REFS&nbsp;[2]&nbsp;[4]</p>
+      </article>
+
+      <article class="thread reveal">
+        <p class="thread-no">II.</p>
+        <h3 class="thread-title">Time series as symbolic sequences</h3>
+        <p class="thread-body">Discretize a continuous signal and it becomes a string; string algorithms then apply.
+          The DRAGON encoder maps multivariate series onto de Bruijn graphs, recovering long-range context through
+          graph attention and improving forecasts of electricity demand, long-horizon grid load, and beyond.</p>
+        <p class="thread-refs">REFS&nbsp;[1]&nbsp;[5]&nbsp;[6]&nbsp;[7]&nbsp;[8]</p>
+      </article>
+
+      <article class="thread reveal">
+        <p class="thread-no">III.</p>
+        <h3 class="thread-title">Sequences that keep people well</h3>
+        <p class="thread-body">The same graphs that assemble genomes can watch a glucose trace. With clinicians at
+          Sidra Medicine, this thread forecast pediatric hypoglycemia with reinforcement learning over extended de
+          Bruijn graphs, and engineered protein-classification features from sequence structure alone.</p>
+        <p class="thread-refs">REFS&nbsp;[9]&nbsp;[10]</p>
+      </article>
     </div>
+
+    <footer class="page-footer"><span class="pf-num">4</span></footer>
+  </div>
 </section>
 
-<!-- Teaching Section -->
-<section id="teaching">
-    <h2>Teaching</h2>
+<!-- ═══════════════ 04 · TEACHING & APPOINTMENTS ═══════════════ -->
+<section class="section" id="teaching">
+  <div class="manuscript">
+    <header class="section-head">
+      <span class="section-no" data-spine-node="04">04</span>
+      <h2 class="section-title">Teaching &amp; Appointments</h2>
+      <span class="section-sub">THE&nbsp;ACADEMIC&nbsp;RECORD</span>
+    </header>
 
-    <div class="entry">
-        <div class="date">Spring 2023 – Ongoing</div>
-        <div class="details">
-            <strong>CSCI-C 200 Introduction to Computers and Programming</strong> – Associate Instructor (TA)
-            <ul>
-                <li>Instructor: Prof. Dr. Mehmet M Dalkilic</li>
-            </ul>
-        </div>
+    <div class="record">
+      <div class="record-group reveal">
+        <h3 class="record-label">EDUCATION</h3>
+        <dl class="record-list">
+          <div class="record-item">
+            <dt>2023–</dt>
+            <dd><strong>Ph.D., Computer Science</strong> · Indiana University Bloomington, Luddy School of
+              Informatics, Computing, and Engineering<br/>
+              <span class="record-note">Advisor: Prof. Mehmet M. Dalkilic · Co-advisor: Dr. Hasan Kurban</span></dd>
+          </div>
+          <div class="record-item">
+            <dt>2017–21</dt>
+            <dd><strong>B.S., Computer Science</strong> · TOBB University of Economics and Technology, Ankara</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="record-group reveal">
+        <h3 class="record-label">APPOINTMENTS</h3>
+        <dl class="record-list">
+          <div class="record-item">
+            <dt>2024</dt>
+            <dd><strong>Research Associate</strong> · Texas A&amp;M University at Qatar, Doha<br/>
+              <span class="record-note">Self-supervised and federated video learning in the compressed
+                domain</span></dd>
+          </div>
+          <div class="record-item">
+            <dt>2023–</dt>
+            <dd><strong>Student Researcher</strong> · Kurban Intelligence Lab<br/>
+              <span class="record-note">De Bruijn graph representations for time series, clinical forecasting, and
+                video</span></dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="record-group reveal">
+        <h3 class="record-label">TEACHING</h3>
+        <dl class="record-list">
+          <div class="record-item">
+            <dt>2023–</dt>
+            <dd><strong>CSCI-C 200 · Introduction to Computers and Programming</strong> · Associate Instructor<br/>
+              <span class="record-note">with Prof. Mehmet M. Dalkilic</span></dd>
+          </div>
+          <div class="record-item">
+            <dt>2024</dt>
+            <dd><strong>CSCI-B 657 · Computer Vision</strong> · Associate Instructor<br/>
+              <span class="record-note">with Prof. David Crandall</span></dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="record-group reveal">
+        <h3 class="record-label">RECOGNITION</h3>
+        <dl class="record-list">
+          <div class="record-item">
+            <dt>2023</dt>
+            <dd><strong>Luddy Doctoral Associate Instructor Fellowship</strong> · Luddy School of Informatics,
+              Computing, and Engineering</dd>
+          </div>
+        </dl>
+      </div>
     </div>
 
-    <div class="entry">
-        <div class="date">Spring 2024</div>
-        <div class="details">
-            <strong>CSCI-B 657 Computer Vision</strong> – Associate Instructor (TA)
-            <ul>
-                <li>Instructor: Prof. Dr. David Crandall</li>
-            </ul>
-        </div>
-    </div>
+    <footer class="page-footer"><span class="pf-num">5</span></footer>
+  </div>
 </section>
 
-<!-- Education Section -->
-<section id="education">
-    <h2>Education</h2>
-    <div class="entry">
-        <div class="date">Fall 2023 – present</div>
-        <div class="details">
-            <strong>Ph.D. Computer Science</strong>, Indiana University, Luddy School of Informatics, Computing, and
-            Engineering
-            <ul>
-                <li><strong>Advisor:</strong> Prof. Dr. Mehmet M Dalkilic</li>
-                <li><strong>Co-Advisor:</strong> Dr. Hasan Kurban</li>
-            </ul>
-        </div>
+<!-- ═══════════════ 05 · PRIOR ART ═══════════════ -->
+<section class="section" id="prior-art">
+  <div class="manuscript">
+    <header class="section-head">
+      <span class="section-no" data-spine-node="05">05</span>
+      <h2 class="section-title">Prior Art</h2>
+      <span class="section-sub">THE&nbsp;ENGINEERING&nbsp;YEARS,&nbsp;2021–2023</span>
+    </header>
+
+    <div class="section-grid">
+      <div class="section-body">
+        <p class="reveal">Before the doctorate: two years as a full-stack engineer at Innova IT Solutions, building
+          <a class="prose-link" href="https://www.innova.com.tr/en/centralized-fault-management-system-mars"
+             target="_blank" rel="noopener">MARS</a>, a centralized fault-management system for national
+          telecommunication networks with end-to-end detection, diagnosis, and resolution at infrastructure scale.
+          Spring Boot microservices over PL/SQL and MongoDB; React and Vaadin front ends; production deadlines. The
+          research benefits daily: models ship as software, and software is a sequence of decisions too.</p>
+        <p class="tech-tags reveal">SPRING&nbsp;BOOT · MICROSERVICES · PL/SQL · MONGODB · REACT · RESTFUL&nbsp;APIS ·
+          AGILE</p>
+      </div>
+      <aside class="marginalia"></aside>
     </div>
-    <div class="entry">
-        <div class="date">2017 – 2021</div>
-        <div class="details">
-            <strong>BS Computer Science</strong>, TOBB University of Economics and Technology
-        </div>
-    </div>
+
+    <footer class="page-footer"><span class="pf-num">6</span></footer>
+  </div>
 </section>
 
-<!-- Awards and Recognition Section -->
-<section id="awards">
-    <h2>Awards and Recognition</h2>
+<!-- ═══════════════ APPENDIX A ═══════════════ -->
+<section class="section section-appendix" id="appendix">
+  <div class="manuscript">
+    <header class="section-head">
+      <span class="section-no">A</span>
+      <h2 class="section-title">Appendix A: On the Electric Guitar</h2>
+      <span class="section-sub">SIGNALS&nbsp;OF&nbsp;ANOTHER&nbsp;KIND</span>
+    </header>
 
-    <div class="entry-award">
-        <div class="year">2023</div>
-        <div class="award-details">
-            Fall 2023 Luddy Doctoral Associate Instructor Fellowship, Luddy School of Informatics, Computing, and
-            Engineering.
-        </div>
+    <div class="section-grid">
+      <div class="section-body">
+        <p class="reveal">Off the record, the author plays electric guitar: one more instrument that turns a
+          continuous signal into something with structure. Six strings, one pickup, and a time series you can
+          actually hear.</p>
+      </div>
+      <aside class="marginalia">
+        <figure class="fig reveal">
+          <svg viewBox="0 0 300 110" role="img" aria-label="A guitar signal: a clean sine wave passes through an amplifier stage and comes out clipped.">
+            <defs>
+              <marker id="arr-amp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                <path d="M 0 1 L 9 5 L 0 9" fill="none" stroke="var(--ink-muted)" stroke-width="1.2"/>
+              </marker>
+            </defs>
+            <!-- clean signal -->
+            <path d="M 14 55 C 24 25, 40 25, 50 55 S 76 85, 86 55 S 112 25, 122 55"
+                  fill="none" stroke="var(--ink)" stroke-width="1.4"/>
+            <!-- the stage -->
+            <path d="M 136 55 L 156 55" fill="none" stroke="var(--ink-muted)" stroke-width="1" marker-end="url(#arr-amp)"/>
+            <rect x="162" y="41" width="28" height="28" fill="none" stroke="var(--ink)" stroke-width="1.2"/>
+            <text class="fig-t" x="176" y="60" text-anchor="middle">&gt;</text>
+            <path d="M 196 55 L 216 55" fill="none" stroke="var(--ink-muted)" stroke-width="1" marker-end="url(#arr-amp)"/>
+            <!-- driven signal: clipped -->
+            <path d="M 224 55 L 227 32 L 244 32 L 250 78 L 267 78 L 273 32 L 286 32 L 289 55"
+                  fill="none" stroke="var(--rubric)" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+          <figcaption><span class="fig-label">FIG.&nbsp;5.</span> A signal of another kind.</figcaption>
+        </figure>
+      </aside>
     </div>
+  </div>
 </section>
 
-<!-- CV Section -->
-<section id="cv">
-    <h2>Curriculum Vitae</h2>
-    <div class="cv-container">
-        <!-- Embedded PDF -->
-        <embed src="MertResume.pdf" type="application/pdf" width="100%" height="600px"/>
-        <!-- Provide a download link as a fallback -->
-        <p>If the PDF does not display, you can <a href="MertResume.pdf" download>download the CV here</a>.</p>
+</main>
+
+<!-- ═══════════════ COLOPHON ═══════════════ -->
+<footer class="colophon">
+  <div class="manuscript">
+    <div class="double-rule" aria-hidden="true"><span></span><span></span></div>
+    <div class="colophon-grid">
+      <div class="colophon-block">
+        <p class="corr-label">CORRESPONDENCE&nbsp;TO</p>
+        <a class="corr-mail" href="mailto:meocakir@iu.edu">meocakir@iu.edu</a>
+        <p class="colophon-note">The author welcomes correspondence and collaboration.</p>
+      </div>
+      <div class="colophon-block">
+        <p class="corr-label">RECORDS</p>
+        <ul class="corr-links corr-links-row">
+          <li><a href="https://scholar.google.com/citations?user=nwuqlpEAAAAJ" target="_blank" rel="noopener">SCHOLAR</a></li>
+          <li><a href="https://orcid.org/0009-0001-0798-1361" target="_blank" rel="noopener">ORCID</a></li>
+          <li><a href="https://dblp.org/pid/389/3487.html" target="_blank" rel="noopener">DBLP</a></li>
+          <li><a href="https://github.com/Lumpus99" target="_blank" rel="noopener">GITHUB</a></li>
+          <li><a href="https://www.linkedin.com/in/mert-onur-cakiroglu" target="_blank" rel="noopener">LINKEDIN</a></li>
+          <li><a href="MertResume.pdf" download>CV&nbsp;PDF</a></li>
+        </ul>
+      </div>
+      <div class="colophon-block">
+        <p class="corr-label">COLOPHON</p>
+        <p class="colophon-note">Typeset in Fraunces, Newsreader &amp; Fragment Mono. Ink #1E1A15 on Ivory Wove
+          #F7F3EB. Hand-set in HTML &amp; CSS. No frameworks, no trackers. Bloomington, Indiana.</p>
+      </div>
     </div>
-</section>
+    <p class="colophon-fine">© MMXXVI&nbsp;·&nbsp;MERT&nbsp;ONUR&nbsp;CAKIROGLU&nbsp;·&nbsp;MERT.IT.COM</p>
+  </div>
+</footer>
 
-<button id="scrollTopBtn" title="Go to top">↑</button>
+<div class="copy-toast" id="copy-toast" role="status" aria-live="polite">COPIED&nbsp;✓</div>
 
-<script>
-    // Show the button when scrolling down
-    window.onscroll = function () {
-        scrollFunction()
-    };
-
-    function scrollFunction() {
-        const scrollTopBtn = document.getElementById("scrollTopBtn");
-        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-            scrollTopBtn.classList.add("show");
-        } else {
-            scrollTopBtn.classList.remove("show");
-        }
-    }
-
-    // Scroll to the top when the button is clicked
-    document.getElementById("scrollTopBtn").addEventListener("click", function () {
-        window.scrollTo({top: 0, behavior: 'smooth'});
-    });
-</script>
-
-<script>
-    const hamburger = document.querySelector('.hamburger');
-    const mobileNav = document.querySelector('.nav-links.mobile-nav');
-    const mobileNavItems = document.querySelectorAll('.nav-links.mobile-nav a');
-
-    // Toggle the hamburger menu on click
-    hamburger.addEventListener('click', () => {
-        mobileNav.classList.toggle('active');
-        hamburger.classList.toggle('active');
-    });
-
-    // Close the hamburger menu when a nav link is clicked
-    mobileNavItems.forEach(item => {
-        item.addEventListener('click', () => {
-            mobileNav.classList.remove('active');
-            hamburger.classList.remove('active');
-        });
-    });
-
-    // Close the menu if clicked outside
-    document.addEventListener('click', (event) => {
-        const isClickInside = hamburger.contains(event.target) || mobileNav.contains(event.target);
-
-        if (!isClickInside) {
-            // If the click is outside the menu and hamburger, close the menu
-            mobileNav.classList.remove('active');
-            hamburger.classList.remove('active');
-        }
-    });
-</script>
-
-<script src="animations.js"></script>
-
+<script src="script.js"></script>
 </body>
-
 </html>
-
